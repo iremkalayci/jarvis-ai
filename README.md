@@ -40,20 +40,21 @@ Proje, yapay zeka çözümleri sunan kurgusal bir teknoloji şirketi olan **JARV
 ---
 
 ## Proje Yapısı
+
 jarvis-ai/
 ├── assets/
-│ ├── css/ # Stil dosyaları (main.css)
-│ ├── img/ # Proje görselleri
-│ ├── js/ # JavaScript dosyaları
-│ └── vendor/ # Bootstrap ve diğer kütüphaneler
-├── index.html # Ana sayfa
-├── admin.html # Yönetim paneli tasarımı
-├── duyurular.html # Duyuru listesi
-├── urun_nlp.html # Ürün detay sayfası 1
+│   ├── css/          # Stil dosyaları (main.css)
+│   ├── img/          # Proje görselleri
+│   ├── js/           # JavaScript dosyaları
+│   └── vendor/       # Bootstrap ve diğer kütüphaneler
+├── index.html        # Ana sayfa
+├── admin.html        # Yönetim paneli tasarımı
+├── duyurular.html    # Duyuru listesi
+├── urun_nlp.html     # Ürün detay sayfası 1
 ├── urun_goruntu.html # Ürün detay sayfası 2
-├── urun_tahmin.html # Ürün detay sayfası 3
-├── misyon_vizyon.html# Misyon ve vizyon sayfası
-└── README.md # Proje dokümantasyonu
+├── urun_tahmin.html  # Ürün detay sayfası 3
+├── misyon_vizyon.html # Misyon ve vizyon sayfası
+└── README.md         # Proje dokümantasyonu
 
 ---
 
