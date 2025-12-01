@@ -40,4 +40,38 @@ Proje, yapay zeka çözümleri sunan kurgusal bir teknoloji şirketi olan **JARV
 ---
 
 ## Proje Yapısı
+jarvis-ai/
+├── assets/
+│ ├── css/ # Stil dosyaları (main.css)
+│ ├── img/ # Proje görselleri
+│ ├── js/ # JavaScript dosyaları
+│ └── vendor/ # Bootstrap ve diğer kütüphaneler
+├── index.html # Ana sayfa
+├── admin.html # Yönetim paneli tasarımı
+├── duyurular.html # Duyuru listesi
+├── urun_nlp.html # Ürün detay sayfası 1
+├── urun_goruntu.html # Ürün detay sayfası 2
+├── urun_tahmin.html # Ürün detay sayfası 3
+├── misyon_vizyon.html# Misyon ve vizyon sayfası
+└── README.md # Proje dokümantasyonu
+
+---
+
+## Geliştirici Bilgileri
+
+- **Geliştirici:** İrem Kalaycı  
+- **Öğrenci No:** 231307047  
+- **Ders:** TBL303 Web Tasarımı  
+
+---
+
+## Kaynaklar ve Lisans
+
+Bu proje, GP – BootstrapMade şablonu temel alınarak %80 oranında özelleştirilmiştir.
+
+- **Template Name:** GP  
+- **Template URL:** [https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/](https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/)  
+- **Author:** BootstrapMade.com  
+- **License:** [https://bootstrapmade.com/license/](https://bootstrapmade.com/license/)
+
 
