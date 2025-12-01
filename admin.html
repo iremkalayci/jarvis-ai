@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Yönetim Paneli - JARVIS AI</title>
+  
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+        font-family: "Roboto", sans-serif;
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        height: 100vh;
+        background-color: #1f1f1f;
+        padding-top: 20px;
+        border-right: 1px solid #333;
+        position: fixed;
+        width: 250px;
+        overflow-y: auto;
+    }
+
+    .sidebar .logo {
+        font-family: "Raleway", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 30px;
+        display: block;
+        text-decoration: none;
+    }
+    .sidebar .logo span { color: #ffc107; }
+
+    .sidebar a {
+        padding: 15px 25px;
+        text-decoration: none;
+        font-size: 16px;
+        color: #b0b0b0;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidebar a:hover, .sidebar a.active {
+        background-color: #ffc107;
+        color: #000;
+        font-weight: 600;
+    }
+
+    .sidebar a i { margin-right: 10px; }
+
+    /* Ana İçerik */
+    .main-content {
+        margin-left: 250px;
+        padding: 30px;
+    }
+
+    /* Kartlar */
+    .card {
+        background-color: #1f1f1f;
+        border: 1px solid #333;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .card-header {
+        background-color: #252525;
+        border-bottom: 1px solid #333;
+        color: #ffc107;
+        font-weight: 700;
+    }
+
+    /* Formlar */
+    .form-control, .form-select {
+        background-color: #2c2c2c;
+        border: 1px solid #444;
+        color: #fff;
+    }
+    
+    .form-control:focus {
+        background-color: #2c2c2c;
+        border-color: #ffc107;
+        color: #fff;
+        box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+    }
+
+    label { color: #ccc; margin-bottom: 5px; font-weight: 500; }
+
+    /* Tablo */
+    .table { color: #e0e0e0; vertical-align: middle; }
+    .table thead { border-bottom: 2px solid #444; }
+    .table td, .table th { border-color: #333; }
+    .product-img-thumb { width: 50px; height: 50px; object-fit: cover; border-radius: 5px; }
+
+    /* Butonlar */
+    .btn-warning { background-color: #ffc107; border: none; font-weight: 600; }
+    .btn-warning:hover { background-color: #e0a800; }
+
+    /* Dosya Yükleme */
+    .file-upload-wrapper {
+        border: 2px dashed #444;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .file-upload-wrapper:hover { border-color: #ffc107; }
+
+    @media (max-width: 768px) {
+        .sidebar { width: 100%; height: auto; position: relative; }
+        .main-content { margin-left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <a href="index.html" class="logo">JARVIS AI<span>.</span></a>
+    <a href="#" class="active"><i class="bi bi-speedometer2"></i> Dashboard</a>
+    <a href="#duyuruYonetimi"><i class="bi bi-megaphone"></i> Duyuru Yönetimi</a>
+    <a href="#urunYonetimi"><i class="bi bi-box-seam"></i> Ürün Yönetimi</a>
+    <a href="#sliderAyarlari"><i class="bi bi-images"></i> Slider Ayarları</a>
+    <a href="index.html" class="mt-5 text-danger"><i class="bi bi-box-arrow-left"></i> Çıkış Yap</a>
+  </div>
+
+  <div class="main-content">
+    
+    <h2 class="mb-4">Yönetim Paneli</h2>
+
+    <h4 class="mt-5 mb-3 text-white-50" id="duyuruYonetimi">Duyuru İşlemleri</h4>
+    
+    <div class="card">
+        <div class="card-header">
+            <i class="bi bi-plus-circle me-2"></i> Yeni Duyuru Ekle
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="mb-3">
+                            <label class="form-label">Duyuru Başlığı</label>
+                            <input type="text" class="form-control" placeholder="Örn: Yaz Stajı Başvuruları">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">İçerik Detayı</label>
+                            <textarea class="form-control" rows="5" placeholder="Duyuru metnini buraya giriniz..."></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label class="form-label">Dosya Ekle (PDF, Word, Resim)</label>
+                            <div class="file-upload-wrapper">
+                                <i class="bi bi-cloud-upload fs-2 text-muted"></i>
+                                <p class="mb-0 text-muted">Dosya Seç</p>
+                                <input type="file" class="form-control mt-2" accept=".pdf,.doc,.docx,.jpg,.png">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-warning w-100" onclick="alert('Duyuru başarıyla eklendi! (Simülasyon)')">Yayınla</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <i class="bi bi-list-ul me-2"></i> Mevcut Duyurular
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-dark table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Başlık</th>
+                        <th>Tarih</th>
+                        <th>Dosya</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Yaz Stajı Başvuruları</td>
+                        <td>20.05.2025</td>
+                        <td><span class="badge bg-danger">PDF</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-danger" onclick="if(confirm('Bu duyuruyu silmek istediğinize emin misiniz?')) alert('Duyuru silindi!')"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Yılın Girişimi Ödülü</td>
+                        <td>15.04.2025</td>
+                        <td><span class="badge bg-info">IMG</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
+                            <button class="btn btn-sm btn-danger" onclick="if(confirm('Bu duyuruyu silmek istediğinize emin misiniz?')) alert('Duyuru silindi!')"><i class="bi bi-trash"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h4 class="mt-5 mb-3 text-white-50" id="urunYonetimi">Ürün İşlemleri</h4>
+
+    <div class="card">
+        <div class="card-header">
+            <i class="bi bi-box-seam me-2"></i> Yeni Ürün Ekle
+        </div>
+        <div class="card-body">
+            <form>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label>Ürün Adı</label>
+                        <input type="text" class="form-control" placeholder="Örn: Vision X Pro">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Fiyat ($)</label>
+                        <input type="number" class="form-control" placeholder="499">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label>Ürün Görseli</label>
+                        <input type="file" class="form-control" accept="image/*">
+                    </div>
+                    <div class="col-12 text-end">
+                        <button type="button" class="btn btn-warning" onclick="alert('Ürün veritabanına kaydedildi! (Simülasyon)')">Ürünü Kaydet</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <i class="bi bi-grid me-2"></i> Mevcut Ürünler Listesi
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-dark table-hover mb-0">
+                <thead>
+                    <tr>
+                        <th>Görsel</th>
+                        <th>Ürün Adı</th>
+                        <th>Fiyat</th>
+                        <th>Durum</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="assets/img/nlp-detail.jpg" class="product-img-thumb" alt="NLP"></td> <td>Jarvis NLP Pro</td>
+                        <td>$299</td>
+                        <td><span class="badge bg-success">Aktif</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i> Düzenle</button>
+                            <button class="btn btn-sm btn-danger" onclick="if(confirm('Jarvis NLP Pro ürününü silmek üzeresiniz. Onaylıyor musunuz?')) alert('Ürün başarıyla silindi!')">
+                                <i class="bi bi-trash"></i> Sil
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/img/vision-detail.jpg" class="product-img-thumb" alt="Vision"></td>
+                        <td>Vision X</td>
+                        <td>$449</td>
+                        <td><span class="badge bg-success">Aktif</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i> Düzenle</button>
+                            <button class="btn btn-sm btn-danger" onclick="if(confirm('Vision X ürününü silmek üzeresiniz. Onaylıyor musunuz?')) alert('Ürün başarıyla silindi!')">
+                                <i class="bi bi-trash"></i> Sil
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/img/predictive-detail.jpg" class="product-img-thumb" alt="Data"></td>
+                        <td>DataCore</td>
+                        <td>$599</td>
+                        <td><span class="badge bg-warning text-dark">Stok Yok</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i> Düzenle</button>
+                            <button class="btn btn-sm btn-danger" onclick="if(confirm('DataCore ürününü silmek üzeresiniz. Onaylıyor musunuz?')) alert('Ürün başarıyla silindi!')">
+                                <i class="bi bi-trash"></i> Sil
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+  </div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
