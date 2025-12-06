@@ -6,12 +6,12 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Robotik Süreç Otomasyonu (RPA) - JARVIS AI</title>
   
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/gemini.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -20,6 +20,15 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* LOGO TEK SATIR AYARI */
+    .header .logo h1 {
+        white-space: nowrap !important;
+        display: flex;
+        align-items: center;
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -28,13 +37,13 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
-        <img src="assets/img/logo.png" alt="JARVIS AI">
         <h1 class="sitename">JARVIS AI</h1>
+        <span>.</span>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero">ANA SAYFA</a></li>
+          <li><a href="index.html">ANA SAYFA</a></li>
           <li><a href="index.html#about">HAKKIMIZDA</a></li>
           <li><a href="index.html#mission">MİSYON-VİZYON</a></li>
           
@@ -45,11 +54,11 @@
               <li><a href="hizmet_veri.html">Veri Analitiği</a></li>
               <li><a href="hizmet_siber.html">Siber Güvenlik</a></li>
               <li><a href="hizmet_asistan.html">Akıllı Asistanlar</a></li>
-              <li><a href="hizmet_rpa.html">Robotik Süreç</a></li>
+              <li><a href="hizmet_rpa.html" class="active">Robotik Süreç</a></li>
             </ul>
           </li>
           
-          <li class="dropdown"><a href="#"><span>ÜRÜNLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="index.html#urunler"><span>ÜRÜNLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="urun_nlp.html">Jarvis NLP Pro</a></li>
               <li><a href="urun_goruntu.html">Vision X</a></li>
@@ -85,7 +94,7 @@
             <li class="current">Robotik Süreç (RPA)</li>
           </ol>
         </nav>
-        <h1 style="color: #fff;">Robotik Süreç Otomasyonu (RPA)</h1>
+        <h1 style="color: #fff; font-family: 'Orbitron', sans-serif;">Robotik Süreç Otomasyonu (RPA)</h1>
       </div>
     </div>
 
@@ -94,52 +103,72 @@
         <div class="row gy-5">
           
           <div class="col-lg-4" data-aos="fade-right">
-            <div class="service-box" style="background: #f4f4f4; padding: 30px; border-radius: 8px;">
-              <h4 style="font-weight: 700; margin-bottom: 20px;">Diğer Hizmetlerimiz</h4>
+            <div class="service-box" style="background: rgba(255, 255, 255, 0.03); padding: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+              <h4 style="font-weight: 700; margin-bottom: 20px; color: #fff; font-family: 'Orbitron', sans-serif;">Diğer Hizmetlerimiz</h4>
               <div class="services-list d-flex flex-column gap-2">
-                <a href="hizmet_siber.html" style="padding: 10px; background: #fff; color: #333; border-radius: 4px; text-decoration: none; transition: 0.3s;"><i class="bi bi-shield-check me-2"></i> AI Siber Güvenlik</a>
-                <a href="hizmet_asistan.html" style="padding: 10px; background: #fff; color: #333; border-radius: 4px; text-decoration: none; transition: 0.3s;"><i class="bi bi-robot me-2"></i> Akıllı Asistanlar</a>
-                <a href="hizmet_rpa.html" class="active" style="padding: 10px; background: #ffc451; color: #000; border-radius: 4px; text-decoration: none; font-weight: 600;"><i class="bi bi-cpu me-2"></i> Robotik Süreç (RPA)</a>
-                <a href="hizmet_nlp_danismanlik.html" style="padding: 10px; background: #fff; color: #333; border-radius: 4px; text-decoration: none; transition: 0.3s;"><i class="bi bi-chat-dots me-2"></i> NLP Danışmanlığı</a>
-                <a href="hizmet_goruntu_cozum.html" style="padding: 10px; background: #fff; color: #333; border-radius: 4px; text-decoration: none; transition: 0.3s;"><i class="bi bi-eye me-2"></i> Görüntü İşleme</a>
-                <a href="hizmet_veri.html" style="padding: 10px; background: #fff; color: #333; border-radius: 4px; text-decoration: none; transition: 0.3s;"><i class="bi bi-graph-up me-2"></i> Veri Analizi</a>
+                
+                <a href="hizmet_siber.html" style="padding: 12px; background: transparent; color: #aaa; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; text-decoration: none; transition: 0.3s;">
+                    <i class="bi bi-shield-check me-2" style="color: #fff;"></i> AI Siber Güvenlik
+                </a>
+                
+                <a href="hizmet_asistan.html" style="padding: 12px; background: transparent; color: #aaa; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; text-decoration: none; transition: 0.3s;">
+                    <i class="bi bi-robot me-2" style="color: #fff;"></i> Akıllı Asistanlar
+                </a>
+                
+                <a href="hizmet_rpa.html" class="active" style="padding: 12px; background: #00f3ff; color: #000; border-radius: 4px; text-decoration: none; font-weight: 700; box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);">
+                    <i class="bi bi-cpu me-2" style="color: #000 !important;"></i> Robotik Süreç (RPA)
+                </a>
+                
+                <a href="hizmet_nlp_danismanlik.html" style="padding: 12px; background: transparent; color: #aaa; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; text-decoration: none; transition: 0.3s;">
+                    <i class="bi bi-chat-dots me-2" style="color: #fff;"></i> NLP Danışmanlığı
+                </a>
+                
+                <a href="hizmet_goruntu_cozum.html" style="padding: 12px; background: transparent; color: #aaa; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; text-decoration: none; transition: 0.3s;">
+                    <i class="bi bi-eye me-2" style="color: #fff;"></i> Görüntü İşleme
+                </a>
+                
+                <a href="hizmet_veri.html" style="padding: 12px; background: transparent; color: #aaa; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; text-decoration: none; transition: 0.3s;">
+                    <i class="bi bi-graph-up me-2" style="color: #fff;"></i> Veri Analizi
+                </a>
+
               </div>
               
-              <div class="mt-4 p-4 text-center" style="background: #333; color: #fff; border-radius: 8px;">
-                <h5>Verimliliği Artırın</h5>
-                <p style="font-size: 14px;">Sıkıcı işleri robotlara bırakın, ekibiniz değerli işlere odaklansın.</p>
-                <a href="index.html#contact" class="btn btn-warning btn-sm">Teklif Al</a>
+              <div class="mt-4 p-4 text-center" style="background: rgba(0,0,0,0.5); border: 1px solid #00f3ff; color: #fff; border-radius: 8px;">
+                <h5 style="font-family: 'Orbitron', sans-serif;">Verimliliği Artırın</h5>
+                <p style="font-size: 14px; color: #ccc;">Sıkıcı işleri robotlara bırakın, ekibiniz değerli işlere odaklansın.</p>
+                <a href="index.html#contact" class="btn btn-sm" style="background: #00f3ff; color: #000; font-weight: bold; border: none;">TEKLİF AL</a>
               </div>
+
             </div>
           </div>
 
           <div class="col-lg-8" data-aos="fade-left">
-            <img src="assets/img/robotiknew.png" alt="RPA Hizmeti" class="img-fluid mb-4" style="width: 100%; height: 350px; object-fit: cover; border-radius: 10px;">
+            <img src="assets/img/robotiknew.png" alt="RPA Hizmeti" class="img-fluid mb-4" style="width: 100%; height: 350px; object-fit: cover; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1);filter: hue-rotate(135deg) brightness(1.2);">
             
-            <h3 style="font-weight: 700; margin-bottom: 20px;">Tekrar Eden İşlere Son Verin</h3>
-            <p>
+            <h3 style="font-weight: 700; margin-bottom: 20px; color: #fff; font-family: 'Orbitron', sans-serif;">Tekrar Eden İşlere Son Verin</h3>
+            <p style="color: #ccc;">
               Robotik Süreç Otomasyonu (RPA), insan çalışanların bilgisayar başında yaptığı rutin, kurala dayalı ve tekrar eden işleri (veri girişi, raporlama, fatura işleme vb.) taklit eden yazılım robotlarıdır.
             </p>
             
-            <p>
+            <p style="color: #ccc;">
               JARVIS AI RPA çözümleri, mevcut sistemlerinizle (ERP, CRM) sorunsuz entegre olur ve 7/24 hatasız çalışarak operasyonel maliyetlerinizi %60'a varan oranda düşürür.
             </p>
 
             <div class="row mt-4">
-                <div class="col-md-6">
-                    <ul style="list-style: none; padding: 0;">
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Fatura ve Bordro İşleme</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Otomatik Veri Girişi ve Transferi</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Müşteri Kayıt Yönetimi</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul style="list-style: none; padding: 0;">
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> İnsan Hatasını Sıfıra İndirme</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> 7/24 Kesintisiz Operasyon</li>
-                        <li class="mb-2"><i class="bi bi-check-circle-fill text-warning me-2"></i> Hızlı ROI (Yatırım Getirisi)</li>
-                    </ul>
-                </div>
+              <div class="col-md-6">
+                <ul style="list-style: none; padding: 0;">
+                  <li class="mb-2" style="color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #ffffff;"></i> Fatura ve Bordro İşleme</li>
+                  <li class="mb-2" style="color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #ffffff;"></i> Otomatik Veri Girişi ve Transferi</li>
+                  <li class="mb-2" style="color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #ffffff;"></i> Müşteri Kayıt Yönetimi</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul style="list-style: none; padding: 0;">
+                  <li class="mb-2" style="color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #ffffff;"></i> İnsan Hatasını Sıfıra İndirme</li>
+                  <li class="mb-2" style="color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #ffffff;"></i> 7/24 Kesintisiz Operasyon</li>
+                  <li class="mb-2" style="color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #ffffff;"></i> Hızlı ROI (Yatırım Getirisi)</li>
+                </ul>
+              </div>
             </div>
 
           </div>

@@ -2,6 +2,7 @@
 <html lang="tr">
 
 <head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Jarvis Ai</title>
@@ -11,7 +12,7 @@
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -24,32 +25,77 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
-    /* SLIDER VE YAZI AYARLARI */
+    /* === FONTLARI ZORLA (FORCE FONTS) === */
+    :root {
+        --heading-font: "Orbitron", sans-serif;
+        --body-font: "Rajdhani", sans-serif;
+    }
     
+    body {
+        font-family: var(--body-font) !important;
+        font-size: 18px;
+    }
+
+    h1, h2, h3, h4, h5, h6, .sitename, .navmenu a, .btn-getstarted {
+        font-family: var(--heading-font) !important;
+    }
+
+    /* === LOGO AYARI (Küçültüldü ve Tek Satır) === */
+    .header .logo h1 {
+        font-size: 24px !important;
+        letter-spacing: 2px;
+        font-weight: 700;
+        margin-top: 5px;
+        white-space: nowrap !important; /* Asla alt satıra geçmesin */
+        display: flex;
+        align-items: center;
+    }
+
+    /* === SLIDER VE YAZI AYARLARI === */
     .hero-title {
-        font-family: "Raleway", sans-serif !important;
+        font-family: "Orbitron", sans-serif !important;
         font-weight: 700 !important;
-        font-size: 64px !important;
+        
+        /* Font boyutunu 42px'e düşürdük ki tek satıra sığsın */
+        font-size: 42px !important; 
+        
         color: #fff !important;
-        margin-bottom: 10px !important;
-        letter-spacing: 3px;
+        margin-bottom: 15px !important;
+        
+        /* Harf aralığını biraz kıstık */
+        letter-spacing: 1px !important; 
+        
         text-transform: uppercase;
         text-shadow: 0 0 20px rgba(0,0,0,0.5);
+        
+        /* Tek satırda kalmaya zorla */
+        white-space: nowrap; 
     }
 
-    .hero-title span { color: #ffc451 !important; }
+    /* Nokta Rengi: Beyaz */
+    .hero-title span { color: #ffffff !important; }
 
     .hero-subtitle {
-        font-family: "Raleway", sans-serif !important;
-        color: rgba(255, 255, 255, 0.85) !important;
-        font-size: 28px !important;
+        font-family: "Rajdhani", sans-serif !important;
+        color: rgba(255, 255, 255, 0.9) !important;
+        font-size: 24px !important;
         font-weight: 400 !important;
         white-space: nowrap;
+        letter-spacing: 1px;
     }
 
+    /* === MOBİL UYUMLULUK (Responsive) === */
     @media (max-width: 992px) {
-        .hero-subtitle { font-size: 18px !important; white-space: normal; }
-        .hero-title { font-size: 42px !important; }
+        .hero-title { 
+            font-size: 28px !important; /* Mobilde daha da küçülsün */
+            white-space: normal; /* Mobilde alt alta geçebilsin, taşmasın */
+            text-align: center;
+        }
+        .hero-subtitle { 
+            font-size: 18px !important; 
+            white-space: normal;
+            text-align: center;
+        }
     }
 
     #heroCarousel {
@@ -88,9 +134,6 @@
               <li><a href="hizmet_siber.html">Siber Güvenlik</a></li>
               <li><a href="hizmet_asistan.html">Akıllı Asistanlar</a></li>
               <li><a href="hizmet_rpa.html">Robotik Süreç</a></li>
-              
-              
-              
             </ul>
           </li>
           
@@ -130,10 +173,10 @@
             <img src="assets/img/hero-bg.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
           </div>
           <div class="carousel-item" style="height: 100%;">
-            <img src="assets/img/hero-bg.jpg" style="width: 100%; height: 100%; object-fit: cover; filter: hue-rotate(190deg);" alt="">
+            <img src="assets/img/nlpnew.png" style="width: 100%; height: 100%; object-fit: cover;" alt="">
           </div>
           <div class="carousel-item" style="height: 100%;">
-            <img src="assets/img/hero-bg.jpg" style="width: 100%; height: 100%; object-fit: cover; filter: hue-rotate(290deg);" alt="">
+            <img src="assets/img/goruntu.png" style="width: 100%; height: 100%; object-fit: cover;" alt="">
           </div>
         </div>
       </div>
@@ -151,188 +194,214 @@
           <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
                 <i class="bi bi-bar-chart-line"></i> 
-                <h3><a href="sayilarla_ai.html">Sayılarla AI</a></h3>
-            </div>
-          </div>
-          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box">
-              <i class="bi bi-bullseye"></i>
-              <h3><a href="#">Derin Öğrenme</a></h3>
-            </div>
-          </div>
-          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-box">
-              <i class="bi bi-shield-lock"></i>
-              <h3><a href="#">Siber Güvenlik</a></h3>
-            </div>
-          </div>
-          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon-box">
-              <i class="bi bi-cloud"></i>
-              <h3><a href="#">Bulut Sistem</a></h3>
-            </div>
-          </div>
-          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon-box">
-              <i class="bi bi-robot"></i>
-              <h3><a href="#">Robotik</a></h3>
+                <h3><a href="sayilarla_ai.html">JARVIStatics</a></h3>
             </div>
           </div>
         </div>
 
       </div>
     </section>
-
-    <section id="about" class="about section">
+<section id="about" class="about section" style="padding: 100px 0;">
       <div class="container" data-aos="fade-up">
-        <div class="row gy-4 align-items-center justify-content-between">
-          <div class="col-xl-5" data-aos="fade-right">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="Hakkımızda" style="border-radius: 15px;">
-          </div>
-          <div class="col-xl-6" data-aos="fade-left">
-            <div class="content">
-              <h3>Geleceği Tasarlıyoruz</h3>
-              <p class="fst-italic">JARVIS AI olarak, yapay zeka ile iş dünyasının sınırlarını zorluyoruz.</p>
-              <p>Veri analizi, otomasyon ve siber güvenlik alanlarında geliştirdiğimiz çözümlerle müşterilerimize değer katıyoruz. Sadece yazılım değil, akıllı bir gelecek inşa ediyoruz.</p>
-              
-              <div class="row gy-4 mt-2">
-                <div class="col-md-6 icon-box">
-                  <i class="bi bi-speedometer2" style="color:#ffc451; font-size:32px; float:left; margin-right:10px;"></i>
-                  <h4>Hızlı Çözümler</h4>
-                </div>
-                <div class="col-md-6 icon-box">
-                  <i class="bi bi-shield-check" style="color:#ffc451; font-size:32px; float:left; margin-right:10px;"></i>
-                  <h4>Güvenli Altyapı</h4>
-                </div>
-              </div>
-            </div>
+        
+        <div class="row justify-content-center text-center" style="margin-bottom: 80px;">
+          <div class="col-lg-10">
+            <h4 style="color: #00f3ff; font-family: 'Rajdhani', sans-serif; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 20px;"></h4>
+            
+            <h3 style="font-size: 3rem; font-weight: 700; font-family: 'Orbitron', sans-serif; color: #fff; margin-bottom: 30px;">
+              YAPAY ZEKA İLE GELECEĞİ KODLUYORUZ
+            </h3>
+            
+            <p style="font-size: 1.2rem; color: #ccc; line-height: 1.9; max-width: 900px; margin: 0 auto;">
+              JARVIS AI, veriyi sadece işlemekle kalmaz, ona anlam katar. Derin öğrenme ve makine zekasıyla iş dünyasının karmaşık problemlerine en yalın, en hızlı ve en güvenli çözümleri üretiyoruz.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="mission" class="section light-background">
-      <div class="container" data-aos="fade-up">
-        <div class="container section-title">
-          <h2>Kurumsal</h2>
-          <p>Misyon & Vizyon</p>
-        </div>
-        <div class="row gy-4">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative" style="background:#fff; padding:40px; border-left: 5px solid #ffc451;">
-              <div class="icon"><i class="bi bi-bullseye" style="font-size:36px; color:#ffc451;"></i></div>
-              <h3 style="margin:15px 0;">Misyonumuz</h3>
-              <p>İnsan odaklı yapay zeka teknolojileri geliştirerek, karmaşık veri problemlerini basitleştirmek ve işletmelerin potansiyelini maksimuma çıkarmaktır.</p>
+        <div class="row gy-5">
+          
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="d-flex flex-column align-items-center text-center" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(0,243,255,0.1); border-radius: 15px; height: 100%; transition: 0.4s; padding: 50px 20px;">
+              <i class="bi bi-rocket-takeoff" style="font-size: 50px; color: #00f3ff; margin-bottom: 25px; text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);"></i>
+              <h5 style="color: #fff; font-family: 'Orbitron', sans-serif; font-size: 20px; margin-bottom: 15px;">Yüksek Performans</h5>
+              <p style="font-size: 15px; color: #aaa; margin: 0; line-height: 1.6;">Milisaniyeler içinde veri işleme ve analiz yeteneği.</p>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative" style="background:#fff; padding:40px; border-left: 5px solid #000;">
-              <div class="icon"><i class="bi bi-eye" style="font-size:36px; color:#000;"></i></div>
-              <h3 style="margin:15px 0;">Vizyonumuz</h3>
-              <p>Global ölçekte en güvenilir yapay zeka ekosistemini oluşturmak ve teknolojinin gücüyle daha akıllı, güvenli bir gelecek inşa etmektir.</p>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="d-flex flex-column align-items-center text-center" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(0,243,255,0.1); border-radius: 15px; height: 100%; transition: 0.4s; padding: 50px 20px;">
+              <i class="bi bi-shield-lock" style="font-size: 50px; color: #00f3ff; margin-bottom: 25px; text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);"></i>
+              <h5 style="color: #fff; font-family: 'Orbitron', sans-serif; font-size: 20px; margin-bottom: 15px;">Maksimum Güvenlik</h5>
+              <p style="font-size: 15px; color: #aaa; margin: 0; line-height: 1.6;">Uçtan uca şifreli ve korumalı altyapı.</p>
             </div>
           </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="d-flex flex-column align-items-center text-center" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(0,243,255,0.1); border-radius: 15px; height: 100%; transition: 0.4s; padding: 50px 20px;">
+              <i class="bi bi-cpu" style="font-size: 50px; color: #00f3ff; margin-bottom: 25px; text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);"></i>
+              <h5 style="color: #fff; font-family: 'Orbitron', sans-serif; font-size: 20px; margin-bottom: 15px;">Makine Öğrenimi</h5>
+              <p style="font-size: 15px; color: #aaa; margin: 0; line-height: 1.6;">Kendi kendini geliştiren adaptif algoritmalar.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="d-flex flex-column align-items-center text-center" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(0,243,255,0.1); border-radius: 15px; height: 100%; transition: 0.4s; padding: 50px 20px;">
+              <i class="bi bi-globe" style="font-size: 50px; color: #00f3ff; margin-bottom: 25px; text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);"></i>
+              <h5 style="color: #fff; font-family: 'Orbitron', sans-serif; font-size: 20px; margin-bottom: 15px;">Global Ölçek</h5>
+              <p style="font-size: 15px; color: #aaa; margin: 0; line-height: 1.6;">Dünya standartlarında kesintisiz destek.</p>
+            </div>
+          </div>
+
         </div>
+
       </div>
     </section>
+   <section id="mission" class="mission section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>KURUMSAL</h2>
+    <p>Misyon & Vizyon</p>
+  </div>
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+      
+      <div class="col-lg-6">
+        <div class="mission-box">
+          <div class="icon">
+            <i class="bi bi-bullseye"></i>
+          </div>
+          <h3>Misyonumuz</h3>
+          <p>İnsan odaklı yapay zeka teknolojileri geliştirerek, karmaşık veri problemlerini basitleştirmek ve işletmelerin potansiyelini maksimuma çıkarmaktır.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="mission-box">
+          <div class="icon">
+            <i class="bi bi-eye"></i>
+          </div>
+          <h3>Vizyonumuz</h3>
+          <p>Global ölçekte en güvenilir yapay zeka ekosistemini oluşturmak ve teknolojinin gücüyle daha akıllı, güvenli bir gelecek inşa etmektir.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <section id="services" class="services section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Hizmetlerimiz</h2>
-        <p>Yapay Zeka Çözümleri</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-chat-text"></i></div>
-              <h3>NLP Çözümleri</h3>
-              <p>Metinleri analiz eden akıllı sistemler.</p>
-              <a href="hizmet_nlp_danismanlik.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-eye"></i></div>
-              <h3>Görüntü İşleme</h3>
-              <p>Güvenlik ve analiz için görsel zeka.</p>
-              <a href="hizmet_goruntu_cozum.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-graph-up-arrow"></i></div>
-              <h3>Veri Analitiği</h3>
-              <p>Geleceği tahmin eden algoritmalar.</p>
-              <a href="hizmet_veri.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-shield-check"></i></div>
-              <h3>Siber Güvenlik</h3>
-              <p>Yapay zeka destekli tehdit önleme.</p>
-              <a href="hizmet_siber.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-robot"></i></div>
-              <h3>Akıllı Asistanlar</h3>
-              <p>7/24 çalışan sanal müşteri temsilcileri.</p>
-              <a href="hizmet_asistan.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-cpu"></i></div>
-              <h3>Robotik Süreç</h3>
-              <p>Ofis işlerinizi otomatize edin.</p>
-              <a href="hizmet_rpa.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-            </div>
+  
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Hizmetlerimiz</h2>
+    <p>Yapay Zeka Çözümleri</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-chat-text"></i></div>
+            <h3>NLP Çözümleri</h3>
+            <p>Metinleri analiz eden akıllı sistemler.</p>
+            <a href="hizmet_nlp_danismanlik.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
-      </div>
-    </section>
-    <section id="urunler" class="services section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Ürünlerimiz</h2>
-        <p>Paket Yazılımlarımız</p>
-      </div>
-      <div class="container">
-        <div class="row gy-4">
-          
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-cpu"></i></div>
-              <h3>Jarvis NLP Pro</h3>
-              <p>Kurumlar için özelleştirilebilir Doğal Dil İşleme motoru.</p>
-              <a href="urun_nlp.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-camera-video"></i></div>
-              <h3>Vision X</h3>
-              <p>Gelişmiş nesne tanıma ve güvenlik kamerası analiz yazılımı.</p>
-              <a href="urun_goruntu.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-            </div>
+        <div class="swiper-slide">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-eye"></i></div>
+            <h3>Görüntü İşleme</h3>
+            <p>Güvenlik ve analiz için görsel zeka.</p>
+            <a href="hizmet_goruntu_cozum.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
           </div>
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-bar-chart-steps"></i></div>
-              <h3>DataCore</h3>
-              <p>Büyük veri setleri için tahmine dayalı analitik platformu.</p>
-              <a href="urun_tahmin.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-
         </div>
+
+        <div class="swiper-slide">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-graph-up-arrow"></i></div>
+            <h3>Veri Analitiği</h3>
+            <p>Geleceği tahmin eden algoritmalar.</p>
+            <a href="hizmet_veri.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-shield-check"></i></div>
+            <h3>Siber Güvenlik</h3>
+            <p>Yapay zeka destekli tehdit önleme.</p>
+            <a href="hizmet_siber.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-robot"></i></div>
+            <h3>Akıllı Asistanlar</h3>
+            <p>7/24 çalışan sanal müşteri temsilcileri.</p>
+            <a href="hizmet_asistan.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-cpu"></i></div>
+            <h3>Robotik Süreç</h3>
+            <p>Ofis işlerinizi otomatize edin.</p>
+            <a href="hizmet_rpa.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
       </div>
-    </section>
-   
+      <div class="swiper-pagination"></div>
+    </div>
+    </div>
+</section>
+    
+     <section id="urunler" class="services section">
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Ürünlerimiz</h2>
+    <p>Paket Yazılımlarımız</p>
+  </div>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-cpu"></i></div>
+            <h3>Jarvis NLP Pro</h3>
+            <p>Kurumlar için özelleştirilebilir Doğal Dil İşleme motoru.</p>
+            <a href="urun_nlp.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-camera-video"></i></div>
+            <h3>Vision X</h3>
+            <p>Gelişmiş nesne tanıma ve güvenlik kamerası analiz yazılımı.</p>
+            <a href="urun_goruntu.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="service-item position-relative">
+            <div class="icon"><i class="bi bi-bar-chart-steps"></i></div>
+            <h3>DataCore</h3>
+            <p>Büyük veri setleri için tahmine dayalı analitik platformu.</p>
+            <a href="urun_tahmin.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
     <section id="duyurular" class="services section" style="background-color: #f9f9f9;">
       <div class="container section-title" data-aos="fade-up">
         <h2>Duyurular</h2>
@@ -365,7 +434,7 @@
             </div>
           </div>
           <div class="col-12 text-center mt-4">
-             <a href="scripts/duyurular.html" class="btn btn-warning">Daha Fazla Duyuru</a>
+             <a href="duyurular.html" class="btn btn-warning">Daha Fazla Duyuru</a>
           </div>
         </div>
       </div>
@@ -378,7 +447,7 @@
       </div>
       <div class="container" data-aos="fade-up">
         <div class="mb-4">
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
+          <iframe style="border:0; width: 100%; height: 270px;" src="https://maps.google.com/maps?q=2570%20N%20First%20St%2C%20San%20Jose%2C%20CA&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="row gy-4">
           <div class="col-lg-4">
@@ -386,7 +455,7 @@
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>Adres</h3>
-                <p>Kocaeli Üniversitesi, Teknoloji Fakültesi</p>
+                <p>2570 N First St, Silicon Valley, San Jose, CA</p>
               </div>
             </div>
             <div class="info-item d-flex">
@@ -411,7 +480,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer id="footer" class="footer dark-background">
@@ -457,6 +525,35 @@
       });
     });
   </script>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1, // Mobilde 1 tane göster
+    spaceBetween: 30, // Kartlar arası boşluk
+    loop: true, // Sürekli döngü (sona gelince başa sarar)
+    autoplay: {
+      delay: 3000, // 3 saniyede bir kayar
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3, // Masaüstünde 3 tane göster
+        spaceBetween: 30,
+      },
+    },
+  });
+</script>
 </body>
 </html>

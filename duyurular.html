@@ -11,7 +11,7 @@
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -20,6 +20,94 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* LOGO TEK SATIR AYARI */
+    .header .logo h1 {
+        white-space: nowrap !important;
+        display: flex;
+        align-items: center;
+    }
+
+    /* DUYURU KARTLARI (Koyu Cam Efekti & Mavi Çerçeve) */
+    .card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: #ddd;
+        transition: 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #00f3ff; /* Neon Cyan */
+        box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    }
+
+    /* TARİH KUTUSU (Sol Taraf) */
+    .bg-light {
+        background-color: rgba(0, 243, 255, 0.1) !important; /* Hafif Mavi */
+        border-right: 1px solid rgba(0, 243, 255, 0.3) !important;
+    }
+    
+    /* GÜN SAYISI (20, 15 vb.) - MAVİ */
+    .text-warning {
+        color: #00f3ff !important;
+        text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+    }
+
+    /* AY VE YIL (MAYIS 2025) - BEYAZ */
+    .text-muted {
+        color: #ffffff !important;
+        opacity: 0.8;
+    }
+
+    /* BADGE (Etiketler) - MAVİ */
+    .badge {
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+    .badge.bg-secondary { background-color: rgba(255,255,255,0.2) !important; color: #fff; border: 1px solid #fff;}
+    .badge.bg-success, .badge.bg-primary, .badge.bg-warning, .badge.bg-info { 
+        background-color: rgba(0, 243, 255, 0.2) !important; 
+        color: #00f3ff !important;
+        border: 1px solid #00f3ff;
+    }
+
+    /* BUTONLAR (Detayları Oku vb.) */
+    .btn-outline-warning, .btn-outline-dark {
+        color: #00f3ff !important;
+        border-color: #00f3ff !important;
+    }
+    .btn-outline-warning:hover, .btn-outline-dark:hover {
+        background-color: #00f3ff !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+    }
+
+    /* PAGINATION (SAYFALAMA) STİLİ */
+    .page-link {
+        background-color: rgba(255,255,255,0.05) !important;
+        border-color: rgba(255,255,255,0.1) !important;
+        color: #fff !important;
+    }
+    .page-link:hover {
+        background-color: rgba(0, 243, 255, 0.2) !important;
+        color: #00f3ff !important;
+        border-color: #00f3ff !important;
+    }
+    .page-item.active .page-link {
+        background-color: #00f3ff !important;
+        border-color: #00f3ff !important;
+        color: #000 !important;
+        font-weight: bold;
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+    }
+    .page-item.disabled .page-link {
+        background-color: rgba(255,255,255,0.02) !important;
+        color: #555 !important;
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -34,22 +122,22 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero">ANA SAYFA</a></li>
+          <li><a href="index.html">ANA SAYFA</a></li>
           <li><a href="index.html#about">HAKKIMIZDA</a></li>
           <li><a href="index.html#mission">MİSYON-VİZYON</a></li>
           
           <li class="dropdown"><a href="index.html#services"><span>HİZMETLER</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">AI Siber Güvenlik</a></li>
-              <li><a href="#">Akıllı Asistanlar</a></li>
-              <li><a href="#">Robotik Süreç (RPA)</a></li>
-              <li><a href="#">NLP Danışmanlığı</a></li>
-              <li><a href="#">Görüntü İşleme</a></li>
-              <li><a href="#">Veri Analizi</a></li>
+              <li><a href="hizmet_nlp_danismanlik.html">NLP Çözümleri</a></li>
+              <li><a href="hizmet_goruntu_cozum.html">Görüntü İşleme</a></li>
+              <li><a href="hizmet_veri.html">Veri Analitiği</a></li>
+              <li><a href="hizmet_siber.html">Siber Güvenlik</a></li>
+              <li><a href="hizmet_asistan.html">Akıllı Asistanlar</a></li>
+              <li><a href="hizmet_rpa.html">Robotik Süreç</a></li>
             </ul>
           </li>
           
-          <li class="dropdown"><a href="#"><span>ÜRÜNLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown"><a href="index.html#urunler"><span>ÜRÜNLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="urun_nlp.html">Jarvis NLP Pro</a></li>
               <li><a href="urun_goruntu.html">Vision X</a></li>
@@ -84,7 +172,7 @@
             <li class="current">Duyurular</li>
           </ol>
         </nav>
-        <h1 style="color: #fff;">Tüm Duyurular</h1>
+        <h1 style="color: #fff; font-family: 'Orbitron', sans-serif;">Tüm Duyurular</h1>
       </div>
     </div>
 
@@ -93,17 +181,17 @@
         <div class="row gy-4">
 
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <div class="card mb-3" style="border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-2 d-flex align-items-center justify-content-center bg-light">
                   <div class="text-center p-3">
-                    <h3 class="m-0 text-warning" style="font-weight: 700;">20</h3>
-                    <span class="d-block text-muted">MAYIS 2025</span>
+                    <h3 class="m-0 text-warning" style="font-weight: 700; font-family: 'Orbitron', sans-serif;">20</h3>
+                    <span class="d-block text-muted" style="font-family: 'Rajdhani', sans-serif;">MAYIS 2025</span>
                   </div>
                 </div>
                 <div class="col-md-10">
                   <div class="card-body">
-                    <h5 class="card-title fw-bold">Yaz Dönemi Staj Başvuruları Başladı</h5>
+                    <h5 class="card-title fw-bold" style="color: #fff;">Yaz Dönemi Staj Başvuruları Başladı</h5>
                     <p class="card-text">2025 Yaz dönemi için mühendislik fakültesi öğrencilerine yönelik staj programımız açılmıştır.</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="#" class="btn btn-sm btn-outline-warning">Detayları Oku</a>
@@ -116,17 +204,17 @@
           </div>
 
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
-            <div class="card mb-3" style="border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-2 d-flex align-items-center justify-content-center bg-light">
                   <div class="text-center p-3">
-                    <h3 class="m-0 text-warning" style="font-weight: 700;">15</h3>
-                    <span class="d-block text-muted">NİSAN 2025</span>
+                    <h3 class="m-0 text-warning" style="font-weight: 700; font-family: 'Orbitron', sans-serif;">15</h3>
+                    <span class="d-block text-muted" style="font-family: 'Rajdhani', sans-serif;">NİSAN 2025</span>
                   </div>
                 </div>
                 <div class="col-md-10">
                   <div class="card-body">
-                    <h5 class="card-title fw-bold">JARVIS AI "Yılın Teknoloji Girişimi" Seçildi</h5>
+                    <h5 class="card-title fw-bold" style="color: #fff;">JARVIS AI "Yılın Teknoloji Girişimi" Seçildi</h5>
                     <p class="card-text">TechSummit 2025 kapsamında düzenlenen ödül töreninde, yapay zeka kategorisinde birincilik ödülü aldık.</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="#" class="btn btn-sm btn-outline-warning">Haberi İncele</a>
@@ -139,21 +227,21 @@
           </div>
 
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
-            <div class="card mb-3" style="border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-2 d-flex align-items-center justify-content-center bg-light">
                   <div class="text-center p-3">
-                    <h3 class="m-0 text-warning" style="font-weight: 700;">02</h3>
-                    <span class="d-block text-muted">MART 2025</span>
+                    <h3 class="m-0 text-warning" style="font-weight: 700; font-family: 'Orbitron', sans-serif;">02</h3>
+                    <span class="d-block text-muted" style="font-family: 'Rajdhani', sans-serif;">MART 2025</span>
                   </div>
                 </div>
                 <div class="col-md-10">
                   <div class="card-body">
-                    <h5 class="card-title fw-bold">2024 Yılı Faaliyet Raporu Yayınlandı</h5>
+                    <h5 class="card-title fw-bold" style="color: #fff;">2024 Yılı Faaliyet Raporu Yayınlandı</h5>
                     <p class="card-text">Şirketimizin 2024 yılına ait finansal verilerini ve büyüme hedeflerini içeren faaliyet raporu yayınlandı.</p>
                     <div class="d-flex justify-content-between align-items-center">
-                        <a href="#" class="btn btn-sm btn-outline-dark"><i class="bi bi-file-earmark-pdf-fill text-danger"></i> PDF İndir</a>
-                        <span class="badge bg-info text-dark">Kurumsal</span>
+                        <a href="#" class="btn btn-sm btn-outline-warning"><i class="bi bi-file-earmark-pdf-fill me-1"></i> PDF İndir</a>
+                        <span class="badge bg-primary">Kurumsal</span>
                     </div>
                   </div>
                 </div>
@@ -162,21 +250,21 @@
           </div>
 
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="400">
-            <div class="card mb-3" style="border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-2 d-flex align-items-center justify-content-center bg-light">
                   <div class="text-center p-3">
-                    <h3 class="m-0 text-warning" style="font-weight: 700;">10</h3>
-                    <span class="d-block text-muted">ŞUBAT 2025</span>
+                    <h3 class="m-0 text-warning" style="font-weight: 700; font-family: 'Orbitron', sans-serif;">10</h3>
+                    <span class="d-block text-muted" style="font-family: 'Rajdhani', sans-serif;">ŞUBAT 2025</span>
                   </div>
                 </div>
                 <div class="col-md-10">
                   <div class="card-body">
-                    <h5 class="card-title fw-bold">Yeni Yapay Zeka Yasası Hakkında Bilgilendirme</h5>
+                    <h5 class="card-title fw-bold" style="color: #fff;">Yeni Yapay Zeka Yasası Hakkında Bilgilendirme</h5>
                     <p class="card-text">Avrupa Birliği uyum yasaları çerçevesinde yürürlüğe giren yeni veri gizliliği yönetmeliği detayları.</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="#" class="btn btn-sm btn-outline-warning">Detayları Oku</a>
-                        <span class="badge bg-warning text-dark">Mevzuat</span>
+                        <span class="badge bg-warning">Mevzuat</span>
                     </div>
                   </div>
                 </div>
@@ -185,17 +273,17 @@
           </div>
 
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="500">
-            <div class="card mb-3" style="border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <div class="card mb-3">
               <div class="row g-0">
                 <div class="col-md-2 d-flex align-items-center justify-content-center bg-light">
                   <div class="text-center p-3">
-                    <h3 class="m-0 text-warning" style="font-weight: 700;">01</h3>
-                    <span class="d-block text-muted">OCAK 2025</span>
+                    <h3 class="m-0 text-warning" style="font-weight: 700; font-family: 'Orbitron', sans-serif;">01</h3>
+                    <span class="d-block text-muted" style="font-family: 'Rajdhani', sans-serif;">OCAK 2025</span>
                   </div>
                 </div>
                 <div class="col-md-10">
                   <div class="card-body">
-                    <h5 class="card-title fw-bold">Vision X Sürüm 2.0 Yayında!</h5>
+                    <h5 class="card-title fw-bold" style="color: #fff;">Vision X Sürüm 2.0 Yayında!</h5>
                     <p class="card-text">Görüntü işleme yazılımımız Vision X, yeni güncellemesiyle artık %30 daha hızlı.</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <a href="urun_goruntu.html" class="btn btn-sm btn-outline-warning">Ürüne Git</a>
@@ -210,18 +298,20 @@
         </div>
         
         <div class="row mt-5">
-            <div class="col-12 d-flex justify-content-center">
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                      <li class="page-item disabled"><a class="page-link" href="#">Önceki</a></li>
-                      <li class="page-item active"><a class="page-link bg-warning border-warning" href="#">1</a></li>
-                      <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
-                      <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
-                      <li class="page-item"><a class="page-link text-dark" href="#">Sonraki</a></li>
-                    </ul>
-                  </nav>
-            </div>
-        </div>
+    <div class="col-12 d-flex justify-content-center">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+              <li class="page-item disabled"><a class="page-link" href="#">Önceki</a></li>
+              
+              <li class="page-item active"><a class="page-link" href="duyurular.html">1</a></li>
+              <li class="page-item"><a class="page-link" href="duyurular_2.html">2</a></li>
+              <li class="page-item"><a class="page-link" href="duyurular_3.html">3</a></li>
+              
+              <li class="page-item"><a class="page-link" href="duyurular_2.html">Sonraki</a></li>
+            </ul>
+          </nav>
+    </div>
+</div>
 
       </div>
     </section>
@@ -239,9 +329,11 @@
   <div id="preloader"></div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/js/main.js"></script>
 

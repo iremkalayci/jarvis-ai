@@ -11,7 +11,7 @@
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -20,6 +20,15 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* LOGO TEK SATIR AYARI */
+    .header .logo h1 {
+        white-space: nowrap !important;
+        display: flex;
+        align-items: center;
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -34,18 +43,18 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero">ANA SAYFA</a></li>
+          <li><a href="index.html">ANA SAYFA</a></li>
           <li><a href="index.html#about">HAKKIMIZDA</a></li>
           <li><a href="index.html#mission">MİSYON-VİZYON</a></li>
           
           <li class="dropdown"><a href="index.html#services"><span>HİZMETLER</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="#">AI Siber Güvenlik</a></li>
-              <li><a href="#">Akıllı Asistanlar</a></li>
-              <li><a href="#">Robotik Süreç (RPA)</a></li>
-              <li><a href="#">NLP Danışmanlığı</a></li>
-              <li><a href="#">Görüntü İşleme</a></li>
-              <li><a href="#">Veri Analizi</a></li>
+              <li><a href="hizmet_nlp_danismanlik.html">NLP Çözümleri</a></li>
+              <li><a href="hizmet_goruntu_cozum.html">Görüntü İşleme</a></li>
+              <li><a href="hizmet_veri.html">Veri Analitiği</a></li>
+              <li><a href="hizmet_siber.html">Siber Güvenlik</a></li>
+              <li><a href="hizmet_asistan.html">Akıllı Asistanlar</a></li>
+              <li><a href="hizmet_rpa.html">Robotik Süreç</a></li>
             </ul>
           </li>
           
@@ -85,7 +94,7 @@
             <li class="current">Doğal Dil İşleme</li>
           </ol>
         </nav>
-        <h1 style="color: #fff;">Doğal Dil İşleme (NLP) Modeli</h1>
+        <h1 style="color: #fff; font-family: 'Orbitron', sans-serif;">Doğal Dil İşleme (NLP) Modeli</h1>
       </div>
     </div>
 
@@ -94,42 +103,42 @@
         <div class="row gy-5">
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/natural.jpg" alt="NLP Ürünü" class="img-fluid services-img" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 100%;">
+            <img src="assets/img/natural.jpg" alt="NLP Ürünü" class="img-fluid services-img" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); width: 100%; border: 1px solid rgba(255,255,255,0.1);">
             
-            <div class="help-box d-flex flex-column justify-content-center align-items-center mt-4" style="background-color: #ffc107; color: #000; padding: 20px; border-radius: 8px;">
-              <i class="bi bi-headset help-icon" style="font-size: 40px; margin-bottom: 10px;"></i>
-              <h4>Sorularınız mı var?</h4>
-              <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2"></i> <span>+90 555 555 55 55</span></p>
-              <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2"></i> <a href="mailto:info@jarvisai.com" style="color: #000;">info@jarvisai.com</a></p>
+            <div class="help-box d-flex flex-column justify-content-center align-items-center mt-4" style="background-color: rgba(255,255,255,0.05); border: 1px solid #00f3ff; color: #fff; padding: 30px; border-radius: 8px; backdrop-filter: blur(5px);">
+              <i class="bi bi-headset help-icon" style="font-size: 40px; margin-bottom: 10px; color: #00f3ff !important;"></i>
+              <h4 style="font-family: 'Orbitron', sans-serif;">Sorularınız mı var?</h4>
+              <p class="d-flex align-items-center mt-2 mb-0"><i class="bi bi-telephone me-2" style="color: #fff !important;"></i> <span>+90 555 555 55 55</span></p>
+              <p class="d-flex align-items-center mt-1 mb-0"><i class="bi bi-envelope me-2" style="color: #fff !important;"></i> <a href="mailto:info@jarvisai.com" style="color: #00f3ff;">info@jarvisai.com</a></p>
             </div>
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             
-            <div style="background: #000; color: #ffc107; display: inline-block; padding: 8px 20px; border-radius: 5px; font-weight: bold; margin-bottom: 20px;">
+            <div style="background: rgba(0, 243, 255, 0.1); color: #00f3ff; display: inline-block; padding: 8px 20px; border-radius: 5px; font-weight: bold; margin-bottom: 20px; border: 1px solid #00f3ff; font-family: 'Orbitron', sans-serif;">
                 Lisans Ücreti: $299 / Ay
             </div>
 
-            <h3 style="font-weight: 700; margin-bottom: 15px;">Jarvis NLP Pro v2.0</h3>
-            <p>
+            <h3 style="font-weight: 700; margin-bottom: 15px; color: #fff; font-family: 'Orbitron', sans-serif;">Jarvis NLP Pro v2.0</h3>
+            <p style="color: #ccc;">
               Yapay zeka tabanlı Doğal Dil İşleme (NLP) motorumuz, metinleri insan hassasiyetiyle analiz eder, sınıflandırır ve anlamlandırır. Müşteri hizmetleri otomasyonu, duygu analizi ve büyük veri işleme süreçlerinizde devrim yaratır.
             </p>
             
-            <p>
+            <p style="color: #ccc;">
               Çok dilli desteği sayesinde global ölçekte verilerinizi işleyebilir, karmaşık dokümanlardan saniyeler içinde anlamlı özetler çıkarabilirsiniz.
             </p>
 
-            <h4 class="mt-4" style="font-weight: 600;">Temel Özellikler</h4>
+            <h4 class="mt-4" style="font-weight: 600; color: #fff; font-family: 'Orbitron', sans-serif;">Temel Özellikler</h4>
             <ul style="list-style: none; padding: 0;">
-              <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill text-warning me-2"></i> 50+ Dilde Metin Analizi ve Çeviri</li>
-              <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill text-warning me-2"></i> Gerçek Zamanlı Duygu Analizi (Pozitif/Negatif)</li>
-              <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill text-warning me-2"></i> Otomatik Metin Özetleme ve Etiketleme</li>
-              <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill text-warning me-2"></i> Sesli Komutları Metne Dönüştürme (Speech-to-Text)</li>
-              <li style="margin-bottom: 10px;"><i class="bi bi-check-circle-fill text-warning me-2"></i> Gelişmiş API Entegrasyonu</li>
+              <li style="margin-bottom: 10px; color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #fff !important;"></i> 50+ Dilde Metin Analizi ve Çeviri</li>
+              <li style="margin-bottom: 10px; color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #fff !important;"></i> Gerçek Zamanlı Duygu Analizi (Pozitif/Negatif)</li>
+              <li style="margin-bottom: 10px; color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #fff !important;"></i> Otomatik Metin Özetleme ve Etiketleme</li>
+              <li style="margin-bottom: 10px; color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #fff !important;"></i> Sesli Komutları Metne Dönüştürme (Speech-to-Text)</li>
+              <li style="margin-bottom: 10px; color: #ccc;"><i class="bi bi-check-circle-fill me-2" style="color: #fff !important;"></i> Gelişmiş API Entegrasyonu</li>
             </ul>
 
             <div class="mt-5">
-                <a href="index.html#contact" class="btn btn-warning btn-lg" style="padding: 12px 40px; font-weight: bold;">Hemen Satın Al</a>
+                <a href="index.html#contact" class="btn btn-warning btn-lg" style="padding: 12px 40px; font-weight: bold; font-family: 'Orbitron', sans-serif;">HEMEN SATIN AL</a>
             </div>
 
           </div>

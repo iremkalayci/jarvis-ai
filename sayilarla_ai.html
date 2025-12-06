@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
   <meta charset="utf-8">
@@ -11,22 +11,122 @@
 
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <link href="assets/css/main.css" rel="stylesheet">
-
+  
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* === CYBERPUNK / HIGH-TECH TEMA === */
+    :root {
+        --neon-cyan: #00f3ff;
+        --neon-pink: #bc13fe;
+        --neon-white: #ffffff;
+        --dark-bg: #050505;
+        --panel-bg: rgba(20, 20, 20, 0.8);
+        --border-color: rgba(0, 243, 255, 0.2);
+    }
+
+    /* Sekme Butonları */
+    .nav-tabs {
+        border-bottom: 1px solid var(--border-color);
+        justify-content: center;
+        margin-bottom: 40px;
+        gap: 20px;
+    }
+    .nav-tabs .nav-link {
+        color: #888;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.1);
+        font-family: "Orbitron", sans-serif;
+        font-size: 14px;
+        letter-spacing: 2px;
+        padding: 15px 30px;
+        transition: 0.4s;
+        text-transform: uppercase;
+        border-radius: 4px;
+    }
+    .nav-tabs .nav-link:hover {
+        color: var(--neon-cyan);
+        border-color: var(--neon-cyan);
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+    }
+    .nav-tabs .nav-link.active {
+        background: rgba(0, 243, 255, 0.1);
+        color: var(--neon-cyan);
+        border: 1px solid var(--neon-cyan);
+        box-shadow: 0 0 20px rgba(0, 243, 255, 0.2) inset;
+    }
+
+    /* İstatistik Kartları (Kutular) */
+    .stats-item {
+        background: var(--panel-bg);
+        padding: 30px 20px;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        text-align: center;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        backdrop-filter: blur(10px);
+    }
+    .stats-item::before {
+        content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+        background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    }
+    .stats-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 40px rgba(0, 243, 255, 0.1);
+        border-color: var(--neon-cyan);
+    }
+    .stats-item span {
+        font-family: "Orbitron", sans-serif;
+        font-size: 48px;
+        display: block;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 5px;
+        text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+    .stats-item p {
+        font-family: "Rajdhani", sans-serif;
+        font-size: 18px;
+        color: var(--neon-cyan);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0;
+        font-weight: 600;
+    }
+
+    /* Grafik Konteyner */
+    .chart-container {
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    .chart-title {
+        font-family: "Orbitron", sans-serif;
+        color: #fff;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+  </style>
 </head>
 
 <body class="index-page">
 
-  <header id="header" class="header d-flex align-items-center fixed-top">
+  <header id="header" class="header d-flex align-items-center fixed-top" style="background: rgba(0,0,0,0.9); border-bottom: 1px solid rgba(255,255,255,0.1);">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
@@ -37,15 +137,28 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">ANA SAYFA</a></li>
-          <li><a href="hakkimizda.html">HAKKIMIZDA</a></li>
-          <li><a href="misyon_vizyon.html">MİSYON-VİZYON</a></li>
-          <li class="dropdown"><a href="#"><span>ÜRÜNLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="index.html#about">HAKKIMIZDA</a></li>
+          <li><a href="index.html#mission">MİSYON-VİZYON</a></li>
+          
+          <li class="dropdown"><a href="index.html#services"><span>HİZMETLER</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
-              <li><a href="urun_nlp.html">Doğal Dil İşleme</a></li>
-              <li><a href="urun_goruntu.html">Görüntü Tanıma</a></li>
-              <li><a href="urun_tahmin.html">Tahmine Dayalı Analitik</a></li>
+              <li><a href="hizmet_nlp_danismanlik.html">NLP Çözümleri</a></li>
+              <li><a href="hizmet_goruntu_cozum.html">Görüntü İşleme</a></li>
+              <li><a href="hizmet_veri.html">Veri Analitiği</a></li>
+              <li><a href="hizmet_siber.html">Siber Güvenlik</a></li>
+              <li><a href="hizmet_asistan.html">Akıllı Asistanlar</a></li>
+              <li><a href="hizmet_rpa.html">Robotik Süreç</a></li>
             </ul>
           </li>
+          
+          <li class="dropdown"><a href="index.html#urunler"><span>ÜRÜNLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="urun_nlp.html">Jarvis NLP Pro</a></li>
+              <li><a href="urun_goruntu.html">Vision X</a></li>
+              <li><a href="urun_tahmin.html">DataCore</a></li>
+            </ul>
+          </li>
+          
           <li class="dropdown"><a href="#"><span>BİRİMLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="birim_arge.html">Ar-Ge Birimi</a></li>
@@ -53,60 +166,113 @@
               <li><a href="birim_veri.html">Veri Bilimi</a></li>
             </ul>
           </li>
+          
           <li><a href="duyurular.html">DUYURULAR</a></li>
-          <li><a href="iletisim.html">İLETİŞİM</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="iletisim.html">İletişime Geçin</a>
+      <a class="btn-getstarted" href="index.html#contact">İletişime Geç</a>
     </div>
   </header>
 
   <main class="main">
 
-    <div class="page-title" data-aos="fade">
-      <div class="container d-flex breadcrumbs">
-         <br><br><br><br>
-      </div>
-      <nav class="breadcrumbs">
-        <div class="container">
+    <div class="page-title" data-aos="fade" style="background-image: url('assets/img/hero-bg.jpg'); padding: 140px 0 60px 0; position: relative; border-bottom: 1px solid var(--neon-cyan);">
+      <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(0,0,0,0.8), #050505);"></div>
+      <div class="container position-relative text-center">
+        <nav class="breadcrumbs justify-content-center mb-4">
           <ol>
             <li><a href="index.html">Ana Sayfa</a></li>
             <li class="current">Sayılarla AI</li>
           </ol>
-        </div>
-      </nav>
+        </nav>
+        <h1 style="color: #fff; font-family: 'Orbitron', sans-serif; font-size: 3.5rem; letter-spacing: 5px; text-shadow: 0 0 20px var(--neon-cyan);">JARVIS ANALYTICS</h1>
+        <p style="color: #aaa; font-family: 'Rajdhani', sans-serif; font-size: 1.5rem; letter-spacing: 3px;">REAL-TIME DATA PROCESSING CENTER</p>
+      </div>
     </div>
 
-    <section id="chart-section" class="section">
-      <div class="container">
-        <div class="section-title" data-aos="fade-up">
-          <h2>İstatistikler</h2>
-          <p>Yapay Zeka Kullanım İstatistikleri</p>
-        </div>
+    <section id="stats" class="section">
+      <div class="container" data-aos="fade-up">
 
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-8 mx-auto">
-            <canvas id="aiChart"></canvas>
-            <p class="text-center mt-3">
-                <em>* Bu grafik, son 5 yılda yapay zeka modellerimizin işlem hacmini göstermektedir.</em>
-            </p>
+        <ul class="nav nav-tabs" id="aiTabs" role="tablist">
+          <li class="nav-item">
+            <button class="nav-link active" id="performance-tab" data-bs-toggle="tab" data-bs-target="#performance" type="button">PERFORMANS</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="tech-tab" data-bs-toggle="tab" data-bs-target="#tech" type="button">TEKNOLOJİ & AR-GE</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" id="corporate-tab" data-bs-toggle="tab" data-bs-target="#corporate" type="button">KURUMSAL VERİLER</button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="aiTabsContent">
+          
+          <div class="tab-pane fade show active" id="performance">
+            <div class="row gy-4 mb-5">
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="99.9" data-purecounter-duration="2" data-purecounter-decimals="1" class="purecounter"></span><p>% UPTIME</p></div></div>
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="12" data-purecounter-duration="1" class="purecounter"></span><p>LATENCY (MS)</p></div></div>
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="850" data-purecounter-duration="1" class="purecounter"></span><p>GÜNLÜK İŞLEM (TB)</p></div></div>
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="4500" data-purecounter-duration="1" class="purecounter"></span><p>ANLIK API İSTEĞİ</p></div></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="chart-container">
+                        <h4 class="chart-title">YAPAY ZEKA MODELİ HATA ORANI (LOSS RATE)</h4>
+                        <canvas id="lossChart" style="max-height: 400px;"></canvas>
+                        <p class="text-center text-muted mt-2 small">* Model eğitimi sürdükçe hata payı %0.02 seviyesine inmiştir.</p>
+                    </div>
+                </div>
+            </div>
           </div>
-        </div>
-      </div>
+
+          <div class="tab-pane fade" id="tech">
+            <div class="row gy-4 mb-5">
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="175" data-purecounter-duration="1" class="purecounter"></span><p>MİLYAR PARAMETRE</p></div></div>
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="1" class="purecounter"></span><p>TPU V4 PODS</p></div></div>
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="12000" data-purecounter-duration="1" class="purecounter"></span><p>EĞİTİM SAATİ (EPOCH)</p></div></div>
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="85" data-purecounter-duration="1" class="purecounter"></span><p>ÖZGÜN ALGORİTMA</p></div></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="chart-container">
+                        <h4 class="chart-title">JARVIS v4.0 YETENEK MATRİSİ</h4>
+                        <canvas id="radarChart" style="max-height: 500px;"></canvas>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="corporate">
+            <div class="row gy-4 mb-5">
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span><p>KURUMSAL PARTNER</p></div></div>
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="18" data-purecounter-duration="1" class="purecounter"></span><p>ÜLKE</p></div></div>
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="45" data-purecounter-duration="1" class="purecounter"></span><p>YAZILIM MÜHENDİSİ</p></div></div>
+              <div class="col-lg-3 col-md-6"><div class="stats-item"><span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span><p>AR-GE BÜTÇESİ (M$)</p></div></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="chart-container">
+                        <h4 class="chart-title">HİZMET VERİLEN SEKTÖRLER</h4>
+                        <canvas id="sectorChart"></canvas>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        </div> </div>
     </section>
 
   </main>
 
-  <footer id="footer" class="footer dark-background">
-    <div class="copyright">
-      <div class="container text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">JARVIS AI</strong> <span>All Rights Reserved</span></p>
-        <div class="credits">
-          Designed by <a href="#">İrem Kalaycı</a>
-        </div>
-      </div>
+  <footer id="footer" class="footer dark-background" style="border-top: 1px solid rgba(255,255,255,0.1);">
+    <div class="container text-center">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename" style="color: var(--neon-cyan);">JARVIS AI</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">Designed by <a href="#" style="color: #fff;">İrem Kalaycı</a></div>
     </div>
   </footer>
 
@@ -116,46 +282,100 @@
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-
   <script src="assets/js/main.js"></script>
 
   <script>
-    const ctx = document.getElementById('aiChart');
+    // Genel Ayarlar (Dark Mode & Font Uyumlu)
+    Chart.defaults.color = '#aaa';
+    Chart.defaults.borderColor = 'rgba(255,255,255,0.05)';
+    Chart.defaults.font.family = "'Rajdhani', sans-serif";
+    Chart.defaults.font.size = 14;
 
-    new Chart(ctx, {
-      type: 'bar', // Grafik tipi: 'bar', 'line', 'pie' olabilir
+    // 1. GRAFİK: LINE CHART (Loss Rate)
+    const ctxLoss = document.getElementById('lossChart');
+    new Chart(ctxLoss, {
+      type: 'line',
       data: {
-        labels: ['2020', '2021', '2022', '2023', '2024'],
+        labels: ['Epoch 1', 'Epoch 5', 'Epoch 10', 'Epoch 20', 'Epoch 50', 'Epoch 100'],
         datasets: [{
-          label: 'Yıllık Veri İşleme Kapasitesi (Terabyte)',
-          data: [120, 190, 300, 500, 850], // Buradaki sayıları değiştirebilirsin
-          borderWidth: 1,
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.7)',
-            'rgba(54, 162, 235, 0.7)',
-            'rgba(255, 206, 86, 0.7)',
-            'rgba(75, 192, 192, 0.7)',
-            'rgba(153, 102, 255, 0.7)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)'
-          ]
+          label: 'Hata Payı (Loss)',
+          data: [0.95, 0.60, 0.35, 0.15, 0.08, 0.02],
+          borderColor: '#00f3ff', // Neon Cyan
+          backgroundColor: 'rgba(0, 243, 255, 0.1)',
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: '#fff'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { grid: { color: 'rgba(255,255,255,0.05)' } } }
+      }
+    });
+
+    // 2. GRAFİK: RADAR CHART (Yetenek Matrisi)
+    const ctxRadar = document.getElementById('radarChart');
+    new Chart(ctxRadar, {
+      type: 'radar',
+      data: {
+        labels: ['Doğal Dil İşleme', 'Görüntü Tanıma', 'Hız / Performans', 'Mantıksal Analiz', 'Yaratıcılık', 'Güvenlik'],
+        datasets: [{
+          label: 'Jarvis v4.0',
+          data: [98, 95, 99, 92, 88, 100],
+          fill: true,
+          backgroundColor: 'rgba(188, 19, 254, 0.2)', // Neon Pink Opak
+          borderColor: '#bc13fe',
+          pointBackgroundColor: '#bc13fe',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: '#bc13fe'
+        },
+        {
+          label: 'Endüstri Ortalaması',
+          data: [70, 65, 60, 55, 50, 75],
+          fill: true,
+          backgroundColor: 'rgba(255, 255, 255, 0.05)',
+          borderColor: '#666',
+          pointBackgroundColor: '#666',
+          borderDash: [5, 5]
         }]
       },
       options: {
         responsive: true,
         scales: {
-          y: {
-            beginAtZero: true
-          }
+            r: {
+                angleLines: { color: 'rgba(255,255,255,0.1)' },
+                grid: { color: 'rgba(255,255,255,0.1)' },
+                pointLabels: { color: '#fff', font: { size: 14 } },
+                suggestedMin: 0,
+                suggestedMax: 100
+            }
         }
       }
+    });
+
+    // 3. GRAFİK: DOUGHNUT CHART (Sektörler)
+    const ctxSector = document.getElementById('sectorChart');
+    new Chart(ctxSector, {
+      type: 'doughnut',
+      data: {
+        labels: ['Fintech', 'Sağlık', 'Savunma Sanayi', 'E-Ticaret', 'Lojistik'],
+        datasets: [{
+          data: [30, 25, 20, 15, 10],
+          backgroundColor: [
+            '#00f3ff', // Cyan
+            '#bc13fe', // Pink
+            '#ffffff', // White
+            '#444444', // Dark Gray
+            '#20c997'  // Green
+          ],
+          borderColor: '#050505',
+          borderWidth: 2
+        }]
+      },
+      options: { responsive: true }
     });
   </script>
 
