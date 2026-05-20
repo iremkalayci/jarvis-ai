@@ -359,9 +359,9 @@
                     <i class="bi bi-x-circle"></i> Sepeti Temizle
                 </a>
 
-                <a href="#" class="btn-neon">
-                    <i class="bi bi-credit-card"></i> Siparişi Tamamla
-                </a>
+              <a href="<?= base_url('odeme') ?>" class="btn-neon">
+    <i class="bi bi-credit-card"></i> Siparişi Tamamla
+</a>
             </div>
 
         <?php endif; ?>

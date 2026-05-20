@@ -23,3 +23,6 @@ $routes->get('sepet-azalt/(:num)', 'Cart::decrease/$1');
 
 $routes->get('urun_nlp.html', 'Home::urunNlp');
 $routes->get('urun/(:num)', 'Home::urunDetay/$1');
+$routes->get('odeme', 'Order::checkout');
+$routes->post('siparis-olustur', 'Order::create');
+$routes->get('siparislerim', 'Order::myOrders');
