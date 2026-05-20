@@ -156,6 +156,52 @@
         transform: none !important;
     }
 
+    .service-item {
+        position: relative;
+    }
+
+    .service-item .product-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        position: relative;
+        z-index: 10;
+    }
+
+    .service-item .btn-product {
+        flex: 1;
+        padding: 8px 15px;
+        font-size: 13px;
+        border-radius: 5px;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.3s;
+        font-family: "Orbitron", sans-serif;
+        font-weight: 500;
+    }
+
+    .service-item .btn-detail {
+        background: rgba(0, 243, 255, 0.1);
+        color: #00f3ff;
+        border: 1px solid #00f3ff;
+    }
+
+    .service-item .btn-detail:hover {
+        background: #00f3ff;
+        color: #000;
+    }
+
+    .service-item .btn-cart {
+        background: rgba(0, 255, 100, 0.1);
+        color: #00ff64;
+        border: 1px solid #00ff64;
+    }
+
+    .service-item .btn-cart:hover {
+        background: #00ff64;
+        color: #000;
+    }
+
   </style>
 </head>
 
@@ -164,48 +210,88 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+      <a href="<?= base_url('/') ?>" class="logo d-flex align-items-center me-auto me-lg-0">
         <h1 class="sitename">JARVIS AI<span>.</span></h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">ANA SAYFA</a></li>
-          <li><a href="#about">HAKKIMIZDA</a></li>
-          <li><a href="#mission">MİSYON-VİZYON</a></li>
-           <li class="dropdown"><a href="index.html#services"><span>HİZMETLER</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="<?= base_url('/') ?>#hero" class="active">ANA SAYFA</a></li>
+          <li><a href="<?= base_url('/') ?>#about">HAKKIMIZDA</a></li>
+          <li><a href="<?= base_url('/') ?>#mission">MİSYON-VİZYON</a></li>
+
+          <li class="dropdown">
+            <a href="<?= base_url('/') ?>#services">
+              <span>HİZMETLER</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
             <ul>
-              <li><a href="hizmet_nlp_danismanlik.html">NLP Çözümleri</a></li>
-              <li><a href="hizmet_goruntu_cozum.html">Görüntü İşleme</a></li>
-              <li><a href="hizmet_veri.html">Veri Analitiği</a></li>
-              <li><a href="hizmet_siber.html">Siber Güvenlik</a></li>
-              <li><a href="hizmet_asistan.html">Akıllı Asistanlar</a></li>
-              <li><a href="hizmet_rpa.html">Robotik Süreç</a></li>
+              <li><a href="<?= base_url('/') ?>#services">NLP Çözümleri</a></li>
+              <li><a href="<?= base_url('/') ?>#services">Görüntü İşleme</a></li>
+              <li><a href="<?= base_url('/') ?>#services">Veri Analitiği</a></li>
+              <li><a href="<?= base_url('/') ?>#services">Siber Güvenlik</a></li>
+              <li><a href="<?= base_url('/') ?>#services">Akıllı Asistanlar</a></li>
+              <li><a href="<?= base_url('/') ?>#services">Robotik Süreç</a></li>
             </ul>
           </li>
           
-          <li class="dropdown"><a href="index.html#urunler"><span>ÜRÜNLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown">
+            <a href="<?= base_url('/') ?>#urunler">
+              <span>ÜRÜNLERİMİZ</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
             <ul>
-              <li><a href="urun_nlp.html">Jarvis NLP Pro</a></li>
-              <li><a href="urun_goruntu.html">Vision X</a></li>
-              <li><a href="urun_tahmin.html">DataCore</a></li>
+              <li><a href="<?= base_url('urun/1') ?>">Jarvis NLP Pro</a></li>
+              <li><a href="<?= base_url('urun/2') ?>">Vision X</a></li>
+              <li><a href="<?= base_url('urun/3') ?>">DataCore</a></li>
             </ul>
           </li>
           
-          <li class="dropdown"><a href="#units"><span>BİRİMLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li class="dropdown">
+            <a href="<?= base_url('/') ?>#units">
+              <span>BİRİMLERİMİZ</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
             <ul>
-              <li><a href="birim_arge.html">Ar-Ge Birimi</a></li>
-              <li><a href="birim_cozum.html">Müşteri Çözümleri</a></li>
+              <li><a href="<?= base_url('/') ?>#units">Ar-Ge Birimi</a></li>
+              <li><a href="<?= base_url('/') ?>#units">Müşteri Çözümleri</a></li>
             </ul>
           </li>
           
-          <li><a href="#duyurular">DUYURULAR</a></li>
+          <li><a href="<?= base_url('/') ?>#duyurular">DUYURULAR</a></li>
           
-          </ul>
+        </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#contact">İletişime Geç</a>
+      <div class="header-buttons d-flex align-items-center">
+        <?php if(session()->get('isLoggedIn')): ?>
+            
+            <?php 
+                $cartCount = 0;
+                if(session()->has('cart')) {
+                    foreach(session()->get('cart') as $item) {
+                        $cartCount += $item['qty'];
+                    }
+                }
+            ?>
+            <a href="<?= base_url('sepet') ?>" class="btn-getstarted" style="background: rgba(0, 243, 255, 0.15); margin-right: 15px; border-color: #00f3ff !important; color: #00f3ff !important; padding: 6px 15px !important;">
+                <i class="bi bi-cart3"></i> Sepetim (<span style="font-weight:bold;"><?= $cartCount ?></span>)
+            </a>
+
+            <span style="color: #00f3ff; margin-right: 15px; font-family: 'Orbitron', sans-serif; font-size: 14px;">
+                <i class="bi bi-person-circle"></i> <?= esc(session()->get('name')) ?>
+            </span>
+            <span style="color: #fff; margin-right: 20px; font-family: 'Orbitron', sans-serif; font-size: 14px; background: rgba(0,243,255,0.1); padding: 5px 10px; border-radius: 5px; border: 1px solid rgba(0,243,255,0.3);">
+                <i class="bi bi-wallet2"></i> <?= number_format(session()->get('balance'), 2, ',', '.') ?> TL
+            </span>
+            <a class="btn-getstarted" href="<?= base_url('cikis') ?>" style="background: rgba(255,0,0,0.1); border-color: #ff0033 !important; color: #ff0033 !important; margin-left: 0;">Çıkış</a>
+        <?php else: ?>
+            <a class="btn-getstarted" href="<?= base_url('giris') ?>" style="margin-left: 0; margin-right: 10px;">Giriş Yap</a>
+            <a class="btn-getstarted" href="<?= base_url('kayit') ?>" style="background: rgba(0, 243, 255, 0.15); margin-left: 0;">Kayıt Ol</a>
+        <?php endif; ?>
+      </div>
+
     </div>
   </header>
 
@@ -217,31 +303,31 @@
         <div class="carousel-inner" style="height: 100%;">
           
           <div class="carousel-item active" style="height: 100%;">
-            <img src="assets/img/hero-bg.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+            <img src="<?= base_url('assets/img/hero-bg.jpg') ?>" style="width: 100%; height: 100%; object-fit: cover;" alt="">
           </div>
           
           <div class="carousel-item" style="height: 100%;">
-            <img src="assets/img/nlpnew.png" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+            <img src="<?= base_url('assets/img/nlpnew.png') ?>" style="width: 100%; height: 100%; object-fit: cover;" alt="">
           </div>
           
           <div class="carousel-item" style="height: 100%;">
-            <img src="assets/img/goruntu.png" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+            <img src="<?= base_url('assets/img/goruntu.png') ?>" style="width: 100%; height: 100%; object-fit: cover;" alt="">
           </div>
 
           <div class="carousel-item" style="height: 100%;">
-            <img src="assets/img/veri.png" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+            <img src="<?= base_url('assets/img/veri.png') ?>" style="width: 100%; height: 100%; object-fit: cover;" alt="">
           </div>
 
           <div class="carousel-item" style="height: 100%;">
-            <img src="assets/img/cta-bg.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+            <img src="<?= base_url('assets/img/cta-bg.jpg') ?>" style="width: 100%; height: 100%; object-fit: cover;" alt="">
           </div>
 
           <div class="carousel-item" style="height: 100%;">
-            <img src="assets/img/header3.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+            <img src="<?= base_url('assets/img/header3.jpg') ?>" style="width: 100%; height: 100%; object-fit: cover;" alt="">
           </div>
 
           <div class="carousel-item" style="height: 100%;">
-            <img src="assets/img/robotiknew.png" style="width: 100%; height: 100%; object-fit: cover;" alt="">
+            <img src="<?= base_url('assets/img/robotiknew.png') ?>" style="width: 100%; height: 100%; object-fit: cover;" alt="">
           </div>
 
         </div>
@@ -259,7 +345,7 @@
                     DETAYLARI İNCELE <i class="bi bi-arrow-right"></i>
                 </a>
                 
-                <a href="sayilarla_ai.html" class="btn-hero secondary">
+                <a href="<?= base_url('/') ?>#about" class="btn-hero secondary">
                     <i class="bi bi-bar-chart-line"></i> JARVIStatics
                 </a>
             </div>
@@ -373,7 +459,7 @@
                 <div class="icon"><i class="bi bi-chat-text"></i></div>
                 <h3>NLP Çözümleri</h3>
                 <p>Metinleri analiz eden akıllı sistemler.</p>
-                <a href="hizmet_nlp_danismanlik.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
 
@@ -382,7 +468,7 @@
                 <div class="icon"><i class="bi bi-eye"></i></div>
                 <h3>Görüntü İşleme</h3>
                 <p>Güvenlik ve analiz için görsel zeka.</p>
-                <a href="hizmet_goruntu_cozum.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
 
@@ -391,7 +477,7 @@
                 <div class="icon"><i class="bi bi-graph-up-arrow"></i></div>
                 <h3>Veri Analitiği</h3>
                 <p>Geleceği tahmin eden algoritmalar.</p>
-                <a href="hizmet_veri.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
 
@@ -400,7 +486,7 @@
                 <div class="icon"><i class="bi bi-shield-check"></i></div>
                 <h3>Siber Güvenlik</h3>
                 <p>Yapay zeka destekli tehdit önleme.</p>
-                <a href="hizmet_siber.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
 
@@ -409,7 +495,7 @@
                 <div class="icon"><i class="bi bi-robot"></i></div>
                 <h3>Akıllı Asistanlar</h3>
                 <p>7/24 çalışan sanal müşteri temsilcileri.</p>
-                <a href="hizmet_asistan.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
 
@@ -418,7 +504,7 @@
                 <div class="icon"><i class="bi bi-cpu"></i></div>
                 <h3>Robotik Süreç</h3>
                 <p>Ofis işlerinizi otomatize edin.</p>
-                <a href="hizmet_rpa.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
               </div>
             </div>
 
@@ -427,7 +513,7 @@
         </div>
       </div>
     </section>
-    
+  
     <section id="urunler" class="services section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Ürünlerimiz</h2>
@@ -438,32 +524,28 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
 
+            <?php foreach ($products as $product): ?>
             <div class="swiper-slide">
-              <div class="service-item position-relative">
+              <div class="service-item">
                 <div class="icon"><i class="bi bi-cpu"></i></div>
-                <h3>Jarvis NLP Pro</h3>
-                <p>Kurumlar için özelleştirilebilir Doğal Dil İşleme motoru.</p>
-                <a href="urun_nlp.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
+                <h3><?= esc($product['title']) ?></h3>
+                <p><?= esc($product['description']) ?></p>
+                
+                <p style="color: #00f3ff; font-weight: bold; font-size:18px;">
+                  <?= number_format($product['price'], 2, ',', '.') ?> TL
+                </p>
+                
+                <div class="product-buttons">
+                  <a href="<?= base_url('urun/' . $product['id']) ?>" class="btn-product btn-detail">
+                    <i class="bi bi-info-circle"></i> Detayları İncele
+                  </a>
+                  <a href="<?= base_url('sepete-ekle/' . $product['id']) ?>" class="btn-product btn-cart">
+                    <i class="bi bi-cart-plus"></i> Sepete Ekle
+                  </a>
+                </div>
               </div>
             </div>
-
-            <div class="swiper-slide">
-              <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-camera-video"></i></div>
-                <h3>Vision X</h3>
-                <p>Gelişmiş nesne tanıma ve güvenlik kamerası analiz yazılımı.</p>
-                <a href="urun_goruntu.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-bar-chart-steps"></i></div>
-                <h3>DataCore</h3>
-                <p>Büyük veri setleri için tahmine dayalı analitik platformu.</p>
-                <a href="urun_tahmin.html" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
+            <?php endforeach; ?>
 
           </div>
           <div class="swiper-pagination"></div>
@@ -484,7 +566,7 @@
               <div class="icon"><i class="bi bi-motherboard"></i></div> 
               <h3>Ar-Ge Birimi</h3>
               <p>Geleceğin teknolojilerini tasarlayan inovasyon laboratuvarımız.</p>
-              <a href="birim_arge.html" class="readmore stretched-link">İncele <i class="bi bi-arrow-right"></i></a>
+              <a href="<?= base_url('/') ?>#units" class="readmore stretched-link">İncele <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
           
@@ -493,7 +575,7 @@
               <div class="icon"><i class="bi bi-headset"></i></div> 
               <h3>Müşteri Çözümleri</h3>
               <p>İhtiyaçlarınıza özel stratejiler geliştiren başarı ekibimiz.</p>
-              <a href="birim_cozum.html" class="readmore stretched-link">İncele <i class="bi bi-arrow-right"></i></a>
+              <a href="<?= base_url('/') ?>#units" class="readmore stretched-link">İncele <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
 
@@ -533,7 +615,7 @@
             </div>
           </div>
           <div class="col-12 text-center mt-4">
-             <a href="duyurular.html" class="btn btn-warning">Daha Fazla Duyuru</a>
+             <a href="<?= base_url('/') ?>#duyurular" class="btn btn-warning">Daha Fazla Duyuru</a>
           </div>
         </div>
       </div>
@@ -581,7 +663,7 @@
     </section>
   </main>
 
- <footer id="footer" class="footer dark-background" style="border-top: 1px solid rgba(0, 243, 255, 0.1); padding: 40px 0; background: #050505;">
+  <footer id="footer" class="footer dark-background" style="border-top: 1px solid rgba(0, 243, 255, 0.1); padding: 40px 0; background: #050505;">
     <div class="container text-center">
       
       <h3 style="font-family: 'Orbitron', sans-serif; color: #fff; margin-bottom: 25px; letter-spacing: 2px;">JARVIS AI<span style="color: #00f3ff;">.</span></h3>
@@ -661,37 +743,37 @@
         { 
             t: "DOĞAL DİL İŞLEME<span>.</span>", 
             s: "İnsan Dilini Anlayan Akıllı Sistemler", 
-            link: "hizmet_nlp_danismanlik.html",
+            link: "<?= base_url('/') ?>#services",
             showBtn: true
         },
         { 
             t: "GÖRÜNTÜ TANIMA<span>.</span>", 
             s: "Güvenlik ve Analiz İçin Görsel İşleme", 
-            link: "hizmet_goruntu_cozum.html",
+            link: "<?= base_url('/') ?>#services",
             showBtn: true
         },
         {
             t: "VERİ ANALİTİĞİ<span>.</span>", 
             s: "Büyük Veri ve Analitik Hizmetleri", 
-            link: "hizmet_veri.html",
+            link: "<?= base_url('/') ?>#services",
             showBtn: true
         },
         {
             t: "SİBER GÜVENLİK<span>.</span>", 
             s: "Tehditleri Gerçekleşmeden Tespit Edin", 
-            link: "hizmet_siber.html",
+            link: "<?= base_url('/') ?>#services",
             showBtn: true
         },
         {
             t: "AKILLI ASİSTANLAR<span>.</span>", 
             s: "7/24 Çalışan Dijital Çalışanlarınız", 
-            link: "hizmet_asistan.html",
+            link: "<?= base_url('/') ?>#services",
             showBtn: true
         },
         {
             t: "ROBOTİK SÜREÇ<span>.</span>", 
             s: "Tekrar Eden İşlere Son Verin", 
-            link: "hizmet_rpa.html",
+            link: "<?= base_url('/') ?>#services",
             showBtn: true
         }
       ];

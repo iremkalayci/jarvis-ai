@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Müşteri Çözümleri - JARVIS AI</title>
+  
+  <link href="assets/img/gemini.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .header .logo h1 {
+        white-space: nowrap !important;
+        display: flex;
+        align-items: center;
+        font-family: "Orbitron", sans-serif !important;
+        font-size: 26px !important;
+        margin: 0;
+    }
+
+    .header .btn-getstarted {
+        font-family: "Orbitron", sans-serif !important;
+        font-size: 13px !important;
+        padding: 8px 25px !important;
+        border-radius: 50px !important;
+        margin-left: 25px !important;
+        white-space: nowrap;
+        height: auto !important;
+        line-height: normal !important;
+        border: 1px solid #00f3ff !important;
+        color: #00f3ff !important;
+        background: transparent;
+        transition: 0.3s;
+    }
+
+    .header .btn-getstarted:hover {
+        background: #00f3ff !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+    }
+
+    .page-title {
+        background-color: #000;
+        padding: 120px 0 60px 0;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .page-title::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: url('assets/img/hero-bg.jpg') center center;
+        background-size: cover;
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    .page-title .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .solution-step {
+        position: relative;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.02);
+        border-left: 4px solid #00f3ff;
+        margin-bottom: 20px;
+        transition: 0.3s;
+    }
+
+    .solution-step:hover {
+        background: rgba(0, 243, 255, 0.05);
+        transform: translateX(10px);
+    }
+
+    .solution-step h4 {
+        font-family: "Orbitron", sans-serif;
+        color: #fff;
+        margin-bottom: 10px;
+    }
+
+    .solution-step p {
+        color: #aaa;
+        margin: 0;
+    }
+
+    .solution-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+        color: rgba(0, 243, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top" style="background: rgba(0,0,0,0.9);">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <h1 class="sitename">JARVIS AI<span>.</span></h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">ANA SAYFA</a></li>
+          <li><a href="index.html#about">HAKKIMIZDA</a></li>
+          <li><a href="index.html#mission">MİSYON-VİZYON</a></li>
+          
+          <li class="dropdown"><a href="index.html#services"><span>HİZMETLER</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="hizmet_nlp_danismanlik.html">NLP Çözümleri</a></li>
+              <li><a href="hizmet_goruntu_cozum.html">Görüntü İşleme</a></li>
+              <li><a href="hizmet_veri.html">Veri Analitiği</a></li>
+              <li><a href="hizmet_siber.html">Siber Güvenlik</a></li>
+              <li><a href="hizmet_asistan.html">Akıllı Asistanlar</a></li>
+              <li><a href="hizmet_rpa.html">Robotik Süreç</a></li>
+            </ul>
+          </li>
+          
+          <li class="dropdown"><a href="index.html#urunler"><span>ÜRÜNLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="urun_nlp.html">Jarvis NLP Pro</a></li>
+              <li><a href="urun_goruntu.html">Vision X</a></li>
+              <li><a href="urun_tahmin.html">DataCore</a></li>
+            </ul>
+          </li>
+          
+          <li class="dropdown"><a href="#" class="active"><span>BİRİMLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="birim_arge.html">Ar-Ge Birimi</a></li>
+              <li><a href="birim_cozum.html" class="active">Müşteri Çözümleri</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="duyurular.html">DUYURULAR</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#contact">İletişime Geç</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li>Birimlerimiz</li>
+            <li class="current">Müşteri Çözümleri</li>
+          </ol>
+        </nav>
+        <h1 style="color: #fff; font-family: 'Orbitron', sans-serif;">MÜŞTERİ BAŞARI EKİBİ</h1>
+        <p style="color: #ccc; max-width: 600px;">Teknolojiyi işinize entegre etmek hiç bu kadar kolay olmamıştı. Uzman ekibimizle uçtan uca destek sağlıyoruz.</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        
+        <div class="row gy-5 mb-5 align-items-center">
+            <div class="col-lg-5" data-aos="fade-right">
+                <img src="assets/img/cta-bg.jpg" alt="Müşteri Çözümleri" class="img-fluid" style="border: 1px solid rgba(0,243,255,0.2); border-radius: 10px; box-shadow: 0 0 30px rgba(0,243,255,0.1);">
+            </div>
+            <div class="col-lg-7" data-aos="fade-left">
+                <h3 style="color: #00f3ff; font-family: 'Orbitron', sans-serif; margin-bottom: 20px;">SİZE ÖZEL STRATEJİLER</h3>
+                <p style="color: #ddd; line-height: 1.8;">
+                    Müşteri Çözümleri Birimimiz, JARVIS AI ürünlerinin kurumunuza sorunsuz entegrasyonundan sorumludur. 
+                    Satış öncesi analizden satış sonrası 7/24 teknik desteğe kadar her adımda yanınızdayız. 
+                    İş süreçlerinizi analiz ediyor, darboğazları belirliyor ve size en uygun yapay zeka modelini kurguluyoruz.
+                </p>
+                <div class="mt-4">
+                    <a href="index.html#contact" class="btn" style="background: #00f3ff; color: #000; font-weight: bold; border-radius: 30px; padding: 10px 30px;">Danışmanlık Al</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row gy-4">
+            <div class="col-lg-12">
+                <h3 class="text-center mb-5" style="color: #fff; font-family: 'Orbitron', sans-serif;">HİZMET SÜRECİMİZ</h3>
+            </div>
+
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="solution-step">
+                    <i class="bi bi-search solution-icon"></i>
+                    <h4>1. Analiz</h4>
+                    <p>Mevcut altyapınızı ve ihtiyaçlarınızı detaylıca inceliyoruz.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                <div class="solution-step">
+                    <i class="bi bi-puzzle solution-icon"></i>
+                    <h4>2. Entegrasyon</h4>
+                    <p>AI modellerimizi sisteminize kesintisiz şekilde entegre ediyoruz.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                <div class="solution-step">
+                    <i class="bi bi-people solution-icon"></i>
+                    <h4>3. Eğitim</h4>
+                    <p>Ekibinize sistemin kullanımı hakkında kapsamlı eğitim veriyoruz.</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                <div class="solution-step">
+                    <i class="bi bi-headset solution-icon"></i>
+                    <h4>4. Destek</h4>
+                    <p>Olası sorunlara karşı 7/24 aktif teknik destek sağlıyoruz.</p>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container text-center">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">JARVIS AI</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">Designed by <a href="#">İrem Kalaycı</a></div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+CRITICAL - 2026-05-20 20:20:42 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-20 20:20:45 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-20 20:20:46 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-20 20:21:09 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-20 20:21:29 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-20 20:23:28 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-20 20:23:31 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-20 20:29:11 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-20 20:29:14 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-20 20:29:43 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-05-20 20:32:06 --> ErrorException: Cannot declare class App\Controllers\Cart, because the name is already in use
+[Method: GET, Route: sepet]
+in APPPATH\Views\cart.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

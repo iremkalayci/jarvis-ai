@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Yönetici Paneli - JARVIS AI</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    /* --- GENEL AYARLAR (NEON TEMA) --- */
+    :root {
+      --neon-cyan: #00f3ff;
+      --dark-bg: #050505;
+      --panel-bg: rgba(255, 255, 255, 0.03);
+      --border-color: rgba(0, 243, 255, 0.2);
+    }
+
+    body {
+        font-family: "Rajdhani", sans-serif;
+        background-color: var(--dark-bg);
+        color: #e0e0e0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6, .logo, .btn-neon, .modal-title {
+        font-family: "Orbitron", sans-serif;
+    }
+
+    /* --- GİRİŞ EKRANI --- */
+    #login-screen {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #050505;
+        z-index: 9999;
+    }
+
+    .login-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 40px;
+        border-radius: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--neon-cyan);
+        box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+        backdrop-filter: blur(10px);
+        text-align: center;
+    }
+
+    /* --- DASHBOARD --- */
+    #dashboard-screen {
+        display: none; /* BAŞLANGIÇTA GİZLİ */
+        min-height: 100vh;
+    }
+
+    .sidebar {
+        height: 100vh;
+        background-color: rgba(10, 10, 10, 0.95);
+        padding-top: 20px;
+        border-right: 1px solid var(--border-color);
+        position: fixed;
+        width: 260px;
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    .sidebar .logo {
+        font-size: 26px;
+        font-weight: 700;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 40px;
+        display: block;
+        text-decoration: none;
+        letter-spacing: 2px;
+    }
+    .sidebar .logo span { color: var(--neon-cyan); }
+
+    .nav-pills .nav-link {
+        color: #b0b0b0;
+        font-size: 18px;
+        padding: 15px 25px;
+        border-radius: 0;
+        border-left: 3px solid transparent;
+        transition: 0.3s;
+        text-align: left;
+        width: 100%;
+        background: transparent;
+    }
+
+    .nav-pills .nav-link:hover, .nav-pills .nav-link.active {
+        background: rgba(0, 243, 255, 0.1);
+        color: var(--neon-cyan);
+        border-left-color: var(--neon-cyan);
+    }
+
+    .main-content {
+        margin-left: 260px;
+        padding: 40px;
+    }
+
+    /* FORM ALANLARI DÜZELTMESİ (GÖRÜNMEYEN YAZILAR İÇİN) */
+    .form-control, .form-select {
+        background: rgba(255, 255, 255, 0.05) !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        color: #ffffff !important; 
+    }
+    
+    .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6) !important;
+        opacity: 1;
+    }
+
+    .form-control:focus {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-color: var(--neon-cyan) !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 10px rgba(0, 243, 255, 0.3) !important;
+    }
+    
+    input[type="file"] {
+        color: #ffffff !important;
+    }
+
+    .text-muted {
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .btn-neon {
+        background: transparent;
+        border: 1px solid var(--neon-cyan);
+        color: var(--neon-cyan);
+        transition: 0.3s;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .btn-neon:hover {
+        background: var(--neon-cyan);
+        color: #000;
+        box-shadow: 0 0 20px rgba(0, 243, 255, 0.6);
+    }
+    
+    .card { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); color: #fff; margin-bottom: 20px;}
+    .card-header { border-bottom: 1px solid var(--border-color); color: var(--neon-cyan); font-family: "Orbitron", sans-serif; font-weight: 700;}
+    
+    .table { color: #ddd; vertical-align: middle; }
+    .table thead { color: var(--neon-cyan); border-bottom: 1px solid var(--border-color); }
+    
+    .product-img-thumb {
+        width: 50px; 
+        height: 50px; 
+        object-fit: cover;
+        border-radius: 5px;
+        border: 1px solid var(--neon-cyan);
+        background: #000;
+    }
+
+    /* Mavi Düzenleme Butonu */
+    .btn-outline-info {
+        color: var(--neon-cyan);
+        border-color: var(--neon-cyan);
+    }
+    .btn-outline-info:hover {
+        background-color: var(--neon-cyan);
+        color: #000;
+        box-shadow: 0 0 10px rgba(0,243,255,0.5);
+    }
+
+    /* MODAL (DÜZENLEME PENCERESİ) STİLİ */
+    .modal-content {
+        background-color: #0a0a0a;
+        border: 1px solid var(--neon-cyan);
+        color: #fff;
+    }
+    .modal-header {
+        border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+    }
+    .modal-footer {
+        border-top: 1px solid rgba(0, 243, 255, 0.2);
+    }
+    .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar { position: relative; width: 100%; height: auto; }
+        .main-content { margin-left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="login-screen">
+    <div class="login-card">
+      <h2 style="color: #fff; letter-spacing: 2px;">JARVIS AI</h2>
+      <p class="text-white-50 mb-4">Yönetim Paneli Girişi</p>
+      
+      <form onsubmit="event.preventDefault(); checkLogin();">
+        <div class="mb-3">
+          <input type="text" id="username" class="form-control" placeholder="Kullanıcı Adı" required>
+        </div>
+        <div class="mb-3">
+          <input type="password" id="password" class="form-control" placeholder="Şifre" required>
+        </div>
+        <button type="submit" class="btn btn-neon w-100">GİRİŞ YAP</button>
+      </form>
+      
+      <div id="error-msg" class="mt-3 text-danger" style="display:none; font-weight:bold;">Hatalı Kullanıcı Adı veya Şifre!</div>
+      <div class="mt-4">
+        <a href="index.html" class="text-white-50" style="font-size: 14px; text-decoration: none;">&larr; Ana Sayfaya Dön</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="dashboard-screen">
+    
+    <div class="sidebar">
+        <a href="index.html" class="logo">JARVIS AI<span>.</span></a>
+        
+        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab"><i class="bi bi-speedometer2 me-2"></i> Dashboard</button>
+            <button class="nav-link" id="v-pills-news-tab" data-bs-toggle="pill" data-bs-target="#v-pills-news" type="button" role="tab"><i class="bi bi-megaphone me-2"></i> Duyuru Yönetimi</button>
+            <button class="nav-link" id="v-pills-products-tab" data-bs-toggle="pill" data-bs-target="#v-pills-products" type="button" role="tab"><i class="bi bi-box-seam me-2"></i> Ürün Yönetimi</button>
+            <a href="index.html" class="nav-link mt-5 text-danger" style="color: #ff4444 !important;"><i class="bi bi-box-arrow-left me-2"></i> Çıkış Yap</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="tab-content" id="v-pills-tabContent">
+
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel">
+                <h2 class="mb-4 text-white">Genel Bakış</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card p-4 text-center">
+                            <h3 class="text-white">3</h3><p class="text-muted">Aktif Ürün</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-4 text-center">
+                            <h3 class="text-white">11</h3><p class="text-muted">Aktif Duyuru</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card p-4 text-center">
+                            <h3 class="text-white">12,504</h3><p class="text-muted">Aylık Ziyaret</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-news" role="tabpanel">
+                <h2 class="mb-4 text-white">Duyuru İşlemleri</h2>
+                
+                <div class="card">
+                    <div class="card-header">Yeni Duyuru Ekle</div>
+                    <div class="card-body">
+                        <form id="newsForm" onsubmit="event.preventDefault(); addNews();">
+                            <div class="mb-3"><label>Başlık</label><input type="text" id="newsTitle" class="form-control" required></div>
+                            <div class="mb-3"><label>Tarih</label><input type="date" id="newsDate" class="form-control" required></div>
+                            <button class="btn btn-neon w-100">Yayınla</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Yayındaki Duyurular (Toplam 11)</div>
+                    <div class="card-body p-0">
+                        <table class="table table-hover mb-0" id="newsTable">
+                            <thead><tr><th>Başlık</th><th>Tarih</th><th>Durum</th><th>İşlem</th></tr></thead>
+                            <tbody>
+                                <tr><td>Yaz Dönemi Staj Başvuruları Başladı</td><td>2025-05-20</td><td><span class="badge bg-success">Yeni</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                                <tr><td>JARVIS AI "Yılın Teknoloji Girişimi" Seçildi</td><td>2025-04-15</td><td><span class="badge bg-success">Yayında</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                                <tr><td>2024 Yılı Faaliyet Raporu Yayınlandı</td><td>2025-03-02</td><td><span class="badge bg-primary">Kurumsal</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                                <tr><td>Yeni Yapay Zeka Yasası Hakkında</td><td>2025-02-10</td><td><span class="badge bg-warning text-dark">Mevzuat</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                                <tr><td>Vision X Sürüm 2.0 Yayında!</td><td>2025-01-01</td><td><span class="badge bg-primary">Ürün</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                                <tr><td>NVIDIA ile Stratejik Ortaklık Anlaşması</td><td>2024-12-12</td><td><span class="badge bg-secondary">Arşiv</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                                <tr><td>Berlin Ofisimiz Açıldı!</td><td>2024-11-28</td><td><span class="badge bg-secondary">Arşiv</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                                <tr><td>Hackathon 2024 Başvuruları Sona Erdi</td><td>2024-11-10</td><td><span class="badge bg-secondary">Arşiv</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                                <tr><td>Siber Güvenlik Semineri</td><td>2024-10-05</td><td><span class="badge bg-secondary">Arşiv</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                                <tr><td>Green AI: Sürdürülebilirlik Raporu</td><td>2024-09-18</td><td><span class="badge bg-secondary">Arşiv</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                                <tr><td>ISO 27001 Sertifikası Aldık</td><td>2024-08-30</td><td><span class="badge bg-secondary">Arşiv</span></td><td><button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="v-pills-products" role="tabpanel">
+                <h2 class="mb-4 text-white">Ürün İşlemleri</h2>
+                
+                <div class="card">
+                    <div class="card-header">Yeni Ürün Ekle</div>
+                    <div class="card-body">
+                        <form id="productForm" onsubmit="event.preventDefault(); addProduct();">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label>Ürün Adı</label>
+                                    <input type="text" id="prodName" class="form-control" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label>Fiyat ($)</label>
+                                    <input type="number" id="prodPrice" class="form-control" required>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label>Ürün Görseli</label>
+                                    <input type="file" id="prodImage" class="form-control" accept="image/*">
+                                </div>
+                                <div class="col-12"><button class="btn btn-neon w-100">Kaydet</button></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">Ürün Listesi</div>
+                    <div class="card-body p-0">
+                        <table class="table table-hover mb-0" id="productTable">
+                            <thead><tr><th>Görsel</th><th>Ürün Adı</th><th>Fiyat</th><th>Durum</th><th>İşlem</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><img src="assets/img/natural.jpg" class="product-img-thumb" alt="Product"></td>
+                                    <td>Jarvis NLP Pro</td>
+                                    <td>$299</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-info me-1" onclick="openEditModal(this)"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="assets/img/visionX.png" class="product-img-thumb" alt="Product"></td>
+                                    <td>Vision X</td>
+                                    <td>$449</td>
+                                    <td><span class="badge bg-success">Aktif</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-info me-1" onclick="openEditModal(this)"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="assets/img/datacore.png" class="product-img-thumb" alt="Product"></td>
+                                    <td>DataCore</td>
+                                    <td>$599</td>
+                                    <td><span class="badge bg-warning text-dark">Stok Az</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-info me-1" onclick="openEditModal(this)"><i class="bi bi-pencil"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="editProductModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ürün Düzenle</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="editForm">
+            <div class="mb-3">
+              <label class="form-label">Ürün Adı</label>
+              <input type="text" id="editProdName" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Fiyat ($)</label>
+              <input type="number" id="editProdPrice" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Görsel Değiştir</label>
+              <input type="file" id="editProdImage" class="form-control" accept="image/*">
+            </div>
+            <div class="text-center">
+                <img id="currentImgPreview" src="" style="width: 80px; height: 80px; object-fit: cover; border-radius: 5px; border: 1px solid #00f3ff;">
+                <p class="text-muted small mt-1">Mevcut Görsel</p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+          <button type="button" class="btn btn-neon" onclick="saveProductChanges()">Değişiklikleri Kaydet</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // 1. LOGIN SİMÜLASYONU
+    function checkLogin() {
+        var u = document.getElementById("username").value;
+        var p = document.getElementById("password").value;
+        if(u === "admin" && p === "1234") {
+            document.getElementById("login-screen").style.display = "none";
+            document.getElementById("dashboard-screen").style.display = "block";
+        } else {
+            document.getElementById("error-msg").style.display = "block";
+        }
+    }
+
+    // 2. DUYURU EKLEME & DÜZENLEME
+    function addNews() {
+        const title = document.getElementById('newsTitle').value;
+        const date = document.getElementById('newsDate').value;
+        const table = document.getElementById('newsTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow(0);
+        newRow.innerHTML = `
+            <td>${title}</td>
+            <td>${date}</td>
+            <td><span class="badge bg-success">Yeni</span></td>
+            <td>
+                <button class="btn btn-sm btn-outline-info me-1" onclick="editNews(this)"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button>
+            </td>`;
+        document.getElementById('newsForm').reset();
+        alert('Duyuru eklendi!');
+    }
+
+    function editNews(btn) {
+        let row = btn.parentNode.parentNode;
+        let titleCell = row.cells[0];
+        let dateCell = row.cells[1];
+        let newTitle = prompt("Duyuru Başlığını Düzenle:", titleCell.innerText);
+        let newDate = prompt("Tarihi Düzenle (YYYY-AA-GG):", dateCell.innerText);
+        if (newTitle && newDate) {
+            titleCell.innerText = newTitle;
+            dateCell.innerText = newDate;
+            alert("Güncellendi!");
+        }
+    }
+
+    // 3. ÜRÜN EKLEME (GÖRSEL DESTEKLİ)
+    function addProduct() {
+        const name = document.getElementById('prodName').value;
+        const price = document.getElementById('prodPrice').value;
+        const imageInput = document.getElementById('prodImage');
+        
+        const file = imageInput.files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = function() {
+            const imgSrc = file ? reader.result : 'assets/img/gemini.png';
+            const table = document.getElementById('productTable').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow(0);
+            
+            newRow.innerHTML = `
+                <td><img src="${imgSrc}" class="product-img-thumb"></td>
+                <td>${name}</td>
+                <td>$${price}</td>
+                <td><span class="badge bg-success">Aktif</span></td>
+                <td>
+                    <button class="btn btn-sm btn-outline-info me-1" onclick="openEditModal(this)"><i class="bi bi-pencil"></i></button>
+                    <button class="btn btn-sm btn-outline-danger" onclick="deleteRow(this)"><i class="bi bi-trash"></i></button>
+                </td>`;
+            
+            document.getElementById('productForm').reset();
+            alert('Ürün eklendi!');
+        }
+
+        if (file) { reader.readAsDataURL(file); } else { reader.onloadend(); }
+    }
+
+    // 4. ÜRÜN DÜZENLEME (MODAL İLE - RESİM DEĞİŞTİRME DAHİL)
+    let currentRow = null; // Düzenlenen satırı tutmak için
+
+    function openEditModal(btn) {
+        currentRow = btn.closest('tr');
+        
+        // Mevcut verileri al
+        const currentImg = currentRow.cells[0].querySelector('img').src;
+        const currentName = currentRow.cells[1].innerText;
+        const currentPrice = currentRow.cells[2].innerText.replace('$','');
+
+        // Modalı doldur
+        document.getElementById('editProdName').value = currentName;
+        document.getElementById('editProdPrice').value = currentPrice;
+        document.getElementById('currentImgPreview').src = currentImg;
+        document.getElementById('editProdImage').value = ""; // Dosya inputunu temizle
+
+        // Modalı Göster
+        var myModal = new bootstrap.Modal(document.getElementById('editProductModal'));
+        myModal.show();
+    }
+
+    function saveProductChanges() {
+        if (!currentRow) return;
+
+        const newName = document.getElementById('editProdName').value;
+        const newPrice = document.getElementById('editProdPrice').value;
+        const imageInput = document.getElementById('editProdImage');
+        
+        // Önce yazıları güncelle
+        currentRow.cells[1].innerText = newName;
+        currentRow.cells[2].innerText = "$" + newPrice;
+
+        // Resim değiştiyse onu da güncelle
+        if (imageInput.files && imageInput.files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                currentRow.cells[0].querySelector('img').src = e.target.result;
+            }
+            reader.readAsDataURL(imageInput.files[0]);
+        }
+
+        // Modalı Kapat
+        var modalEl = document.getElementById('editProductModal');
+        var modal = bootstrap.Modal.getInstance(modalEl);
+        modal.hide();
+        
+        alert("Ürün başarıyla güncellendi!");
+    }
+
+    // 5. SİLME
+    function deleteRow(btn) {
+        if(confirm('Silmek istediğine emin misin?')) {
+            var row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    }
+  </script>
+
+</body>
+</html>

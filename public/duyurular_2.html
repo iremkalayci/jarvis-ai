@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Duyurular - JARVIS AI</title>
+  
+  <link href="assets/img/gemini.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* LOGO TEK SATIR AYARI */
+    .header .logo h1 {
+        white-space: nowrap !important;
+        display: flex;
+        align-items: center;
+    }
+
+    /* DUYURU KARTLARI (Koyu Cam Efekti & Mavi Çerçeve) */
+    .card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        color: #ddd;
+        transition: 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #00f3ff; /* Neon Cyan */
+        box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+    }
+
+    /* TARİH KUTUSU (Sol Taraf) */
+    .bg-light {
+        background-color: rgba(0, 243, 255, 0.1) !important; /* Hafif Mavi */
+        border-right: 1px solid rgba(0, 243, 255, 0.3) !important;
+    }
+    
+    /* GÜN SAYISI - NEON MAVİ */
+    .date-day {
+        color: #00f3ff !important;
+        text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        font-weight: 700; 
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    /* AY VE YIL - BEYAZ */
+    .date-month {
+        color: #ffffff !important;
+        opacity: 0.9;
+        font-family: 'Rajdhani', sans-serif;
+    }
+
+    /* BADGE (Etiketler) - MAVİ ÇERÇEVELİ */
+    .badge {
+        font-family: 'Rajdhani', sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+        background-color: rgba(0, 243, 255, 0.15) !important; 
+        color: #00f3ff !important;
+        border: 1px solid #00f3ff;
+    }
+
+    /* BUTONLAR (Detayları Oku vb.) */
+    .btn-read-more {
+        color: #00f3ff !important;
+        border: 1px solid #00f3ff !important;
+        background: transparent;
+        transition: 0.3s;
+    }
+    .btn-read-more:hover {
+        background-color: #00f3ff !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+    }
+
+    /* PAGINATION (SAYFALAMA) STİLİ */
+    .page-link {
+        background-color: rgba(255,255,255,0.05) !important;
+        border-color: rgba(255,255,255,0.1) !important;
+        color: #fff !important;
+    }
+    .page-link:hover {
+        background-color: rgba(0, 243, 255, 0.2) !important;
+        color: #00f3ff !important;
+        border-color: #00f3ff !important;
+    }
+    .page-item.active .page-link {
+        background-color: #00f3ff !important;
+        border-color: #00f3ff !important;
+        color: #000 !important;
+        font-weight: bold;
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top" style="background: rgba(0,0,0,0.9);">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <h1 class="sitename">JARVIS AI</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">ANA SAYFA</a></li>
+          <li><a href="index.html#about">HAKKIMIZDA</a></li>
+          <li><a href="index.html#mission">MİSYON-VİZYON</a></li>
+          
+          <li class="dropdown"><a href="index.html#services"><span>HİZMETLER</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="hizmet_nlp_danismanlik.html">NLP Çözümleri</a></li>
+              <li><a href="hizmet_goruntu_cozum.html">Görüntü İşleme</a></li>
+              <li><a href="hizmet_veri.html">Veri Analitiği</a></li>
+              <li><a href="hizmet_siber.html">Siber Güvenlik</a></li>
+              <li><a href="hizmet_asistan.html">Akıllı Asistanlar</a></li>
+              <li><a href="hizmet_rpa.html">Robotik Süreç</a></li>
+            </ul>
+          </li>
+          
+          <li class="dropdown"><a href="index.html#urunler"><span>ÜRÜNLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="urun_nlp.html">Jarvis NLP Pro</a></li>
+              <li><a href="urun_goruntu.html">Vision X</a></li>
+              <li><a href="urun_tahmin.html">DataCore</a></li>
+            </ul>
+          </li>
+          
+          <li class="dropdown"><a href="#"><span>BİRİMLERİMİZ</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="birim_arge.html">Ar-Ge Birimi</a></li>
+              <li><a href="birim_cozum.html">Müşteri Çözümleri</a></li>
+              <li><a href="birim_veri.html">Veri Bilimi</a></li>
+            </ul>
+          </li>
+          
+          <li><a href="duyurular.html" class="active">DUYURULAR</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="index.html#contact">İletişime Geç</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <div class="page-title" data-aos="fade" style="background-image: url('assets/img/hero-bg.jpg'); padding: 120px 0 60px 0; filter: brightness(0.8);">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li class="current">Duyurular - Sayfa 2</li>
+          </ol>
+        </nav>
+        <h1 style="color: #fff; font-family: 'Orbitron', sans-serif;">Arşiv Duyurular</h1>
+      </div>
+    </div>
+
+    <section id="blog-posts" class="blog-posts section">
+      <div class="container">
+        <div class="row gy-4">
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-2 d-flex align-items-center justify-content-center bg-light">
+                  <div class="text-center p-3">
+                    <h3 class="m-0 date-day">12</h3>
+                    <span class="d-block date-month">ARALIK 2024</span>
+                  </div>
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold" style="color: #fff;">NVIDIA ile Stratejik Ortaklık Anlaşması</h5>
+                    <p class="card-text">Yüksek performanslı hesaplama (HPC) altyapımızı güçlendirmek adına NVIDIA ile yeni bir çözüm ortaklığına imza attık.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="#" class="btn btn-sm btn-read-more">Basın Bülteni</a>
+                        <span class="badge">Partnerlik</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-2 d-flex align-items-center justify-content-center bg-light">
+                  <div class="text-center p-3">
+                    <h3 class="m-0 date-day">28</h3>
+                    <span class="d-block date-month">KASIM 2024</span>
+                  </div>
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold" style="color: #fff;">Berlin Ofisimiz Açıldı!</h5>
+                    <p class="card-text">Avrupa operasyonlarımızı genişletmek amacıyla Almanya'nın başkenti Berlin'de yeni Ar-Ge ofisimizi faaliyete geçirdik.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="#" class="btn btn-sm btn-read-more">Konumu Gör</a>
+                        <span class="badge">Global</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-2 d-flex align-items-center justify-content-center bg-light">
+                  <div class="text-center p-3">
+                    <h3 class="m-0 date-day">10</h3>
+                    <span class="d-block date-month">KASIM 2024</span>
+                  </div>
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold" style="color: #fff;">Hackathon 2024 Başvuruları Sona Erdi</h5>
+                    <p class="card-text">Bu yıl 5.si düzenlenen geleneksel yapay zeka kodlama maratonumuz için rekor sayıda başvuru aldık.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="#" class="btn btn-sm btn-read-more">Sonuçlar</a>
+                        <span class="badge">Etkinlik</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="400">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-2 d-flex align-items-center justify-content-center bg-light">
+                  <div class="text-center p-3">
+                    <h3 class="m-0 date-day">05</h3>
+                    <span class="d-block date-month">EKİM 2024</span>
+                  </div>
+                </div>
+                <div class="col-md-10">
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold" style="color: #fff;">Siber Güvenlik Semineri</h5>
+                    <p class="card-text">Baş mühendisimiz İrem Kalaycı'nın katılımıyla gerçekleşecek olan online siber güvenlik paneline davetlisiniz.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a href="#" class="btn btn-sm btn-read-more">Kayıt İzle</a>
+                        <span class="badge">Webinar</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        
+        <div class="row mt-5">
+            <div class="col-12 d-flex justify-content-center">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="duyurular.html">Önceki</a></li>
+                      <li class="page-item"><a class="page-link" href="duyurular.html">1</a></li>
+                      <li class="page-item active"><a class="page-link" href="duyurular_2.html">2</a></li>
+                      <li class="page-item"><a class="page-link" href="duyurular_3.html">3</a></li>
+                      <li class="page-item"><a class="page-link" href="duyurular_3.html">Sonraki</a></li>
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+    <div class="container text-center">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">JARVIS AI</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">Designed by <a href="#">İrem Kalaycı</a></div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
