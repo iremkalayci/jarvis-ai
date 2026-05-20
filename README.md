@@ -1,4 +1,3 @@
-@'
 # JARVIS AI – Corporate Website & Backend Web Application Project
 
 Bu proje, yapay zeka çözümleri sunan kurgusal bir teknoloji şirketi olan **JARVIS AI** için hazırlanmış modern, **Cyberpunk/Neon temalı**, responsive ve kullanıcı dostu bir website + backend web application projesidir.
