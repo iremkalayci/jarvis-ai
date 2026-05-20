@@ -202,6 +202,97 @@
         color: #000;
     }
 
+
+    .user-menu-wrapper {
+        position: relative;
+        display: inline-block;
+        margin-right: 15px;
+    }
+
+    .user-menu-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #00f3ff;
+        cursor: pointer;
+        font-family: "Orbitron", sans-serif;
+        font-size: 14px;
+        padding: 7px 10px;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        transition: 0.3s;
+        white-space: nowrap;
+    }
+
+    .user-menu-toggle:hover {
+        border-color: rgba(0, 243, 255, 0.4);
+        background: rgba(0, 243, 255, 0.08);
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.18);
+    }
+
+    .user-menu-toggle i {
+        font-size: 17px;
+    }
+
+    .user-dropdown {
+        display: none;
+        position: absolute;
+        top: 42px;
+        right: 0;
+        width: 210px;
+        background: rgba(5, 5, 5, 0.98);
+        border: 1px solid #00f3ff;
+        border-radius: 14px;
+        box-shadow: 0 0 25px rgba(0, 243, 255, 0.28);
+        z-index: 99999;
+        overflow: hidden;
+    }
+
+    .user-dropdown.show {
+        display: block;
+    }
+
+    .user-dropdown a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #dffcff;
+        text-decoration: none;
+        padding: 13px 15px;
+        font-family: "Orbitron", sans-serif;
+        font-size: 13px;
+        transition: 0.25s;
+    }
+
+    .user-dropdown a:hover {
+        background: rgba(0, 243, 255, 0.12);
+        color: #00f3ff;
+    }
+
+    .user-dropdown .dropdown-balance {
+        padding: 13px 15px;
+        color: #fff;
+        font-family: "Orbitron", sans-serif;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(0, 243, 255, 0.18);
+        background: rgba(0, 243, 255, 0.06);
+    }
+
+    .user-dropdown .dropdown-balance i {
+        color: #00f3ff;
+        margin-right: 8px;
+    }
+
+    .user-dropdown .logout-link {
+        color: #ff4d6d;
+        border-top: 1px solid rgba(0, 243, 255, 0.18);
+    }
+
+    .user-dropdown .logout-link:hover {
+        background: rgba(255, 77, 109, 0.12);
+        color: #ff6b81;
+    }
+
   </style>
 </head>
 
@@ -266,26 +357,59 @@
 
       <div class="header-buttons d-flex align-items-center">
         <?php if(session()->get('isLoggedIn')): ?>
-            
+
             <?php 
                 $cartCount = 0;
+
                 if(session()->has('cart')) {
                     foreach(session()->get('cart') as $item) {
                         $cartCount += $item['qty'];
                     }
                 }
+
+                $balance = session()->get('balance') ?? 0;
+                $userName = session()->get('name') ?? 'Hesabım';
             ?>
+
             <a href="<?= base_url('sepet') ?>" class="btn-getstarted" style="background: rgba(0, 243, 255, 0.15); margin-right: 15px; border-color: #00f3ff !important; color: #00f3ff !important; padding: 6px 15px !important;">
                 <i class="bi bi-cart3"></i> Sepetim (<span style="font-weight:bold;"><?= $cartCount ?></span>)
             </a>
 
-            <span style="color: #00f3ff; margin-right: 15px; font-family: 'Orbitron', sans-serif; font-size: 14px;">
-                <i class="bi bi-person-circle"></i> <?= esc(session()->get('name')) ?>
-            </span>
-            <span style="color: #fff; margin-right: 20px; font-family: 'Orbitron', sans-serif; font-size: 14px; background: rgba(0,243,255,0.1); padding: 5px 10px; border-radius: 5px; border: 1px solid rgba(0,243,255,0.3);">
-                <i class="bi bi-wallet2"></i> <?= number_format(session()->get('balance'), 2, ',', '.') ?> TL
-            </span>
-            <a class="btn-getstarted" href="<?= base_url('cikis') ?>" style="background: rgba(255,0,0,0.1); border-color: #ff0033 !important; color: #ff0033 !important; margin-left: 0;">Çıkış</a>
+            <div class="user-menu-wrapper">
+                <div class="user-menu-toggle" onclick="toggleUserMenu(event)">
+                    <i class="bi bi-person-circle"></i>
+                    <span><?= esc($userName) ?></span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+
+                <div class="user-dropdown" id="userDropdown">
+                    <div class="dropdown-balance">
+                        <i class="bi bi-wallet2"></i>
+                        <?= number_format($balance, 2, ',', '.') ?> TL
+                    </div>
+
+                    <a href="<?= base_url('hesabim') ?>">
+                        <i class="bi bi-person"></i>
+                        Hesabım
+                    </a>
+
+                    <a href="<?= base_url('siparislerim') ?>">
+                        <i class="bi bi-box-seam"></i>
+                        Siparişlerim
+                    </a>
+
+                    <a href="<?= base_url('sepet') ?>">
+                        <i class="bi bi-cart3"></i>
+                        Sepetim
+                    </a>
+
+                    <a href="<?= base_url('cikis') ?>" class="logout-link">
+                        <i class="bi bi-box-arrow-right"></i>
+                        Çıkış Yap
+                    </a>
+                </div>
+            </div>
+
         <?php else: ?>
             <a class="btn-getstarted" href="<?= base_url('giris') ?>" style="margin-left: 0; margin-right: 10px;">Giriş Yap</a>
             <a class="btn-getstarted" href="<?= base_url('kayit') ?>" style="background: rgba(0, 243, 255, 0.15); margin-left: 0;">Kayıt Ol</a>
@@ -790,6 +914,28 @@
             btnElement.style.display = "none";
         }
       });
+    });
+  </script>
+
+
+  <script>
+    function toggleUserMenu(event) {
+      event.stopPropagation();
+
+      const dropdown = document.getElementById('userDropdown');
+
+      if (dropdown) {
+        dropdown.classList.toggle('show');
+      }
+    }
+
+    document.addEventListener('click', function(event) {
+      const wrapper = document.querySelector('.user-menu-wrapper');
+      const dropdown = document.getElementById('userDropdown');
+
+      if (wrapper && dropdown && !wrapper.contains(event.target)) {
+        dropdown.classList.remove('show');
+      }
     });
   </script>
 

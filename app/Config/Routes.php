@@ -26,3 +26,4 @@ $routes->get('urun/(:num)', 'Home::urunDetay/$1');
 $routes->get('odeme', 'Order::checkout');
 $routes->post('siparis-olustur', 'Order::create');
 $routes->get('siparislerim', 'Order::myOrders');
+$routes->get('hesabim', 'Auth::account');    

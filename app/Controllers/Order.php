@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Controller;
-
 class Order extends BaseController
 {
     public function checkout()
@@ -27,44 +25,59 @@ class Order extends BaseController
             return redirect()->to(base_url('sepet'));
         }
 
-        $userId = session()->get('user_id') ?? session()->get('id') ?? 1;
-
         $address = $this->request->getPost('address');
         $phone = $this->request->getPost('phone');
 
-        $total = 0;
+        if (empty($address) || empty($phone)) {
+            return redirect()->to(base_url('odeme'));
+        }
+
+        $userId = session()->get('user_id');
+
+        if (!$userId) {
+            $userId = session()->get('id');
+        }
+
+        if (!$userId) {
+            $userId = 1;
+        }
+
+        $totalPrice = 0;
 
         foreach ($cart as $item) {
-            $qty = $item['qty'] ?? 1;
-            $price = $item['price'] ?? 0;
-            $total += $qty * $price;
+            $price = isset($item['price']) ? (float) $item['price'] : 0;
+            $qty = isset($item['qty']) ? (int) $item['qty'] : 1;
+
+            $totalPrice += $price * $qty;
         }
 
         $db = \Config\Database::connect();
 
         $db->table('orders')->insert([
             'user_id' => $userId,
-            'total_price' => $total,
+            'total_price' => $totalPrice,
             'address' => $address,
             'phone' => $phone,
-            'status' => 'Admin onayı bekleniyor',
-            'is_approved' => 0
+            'status' => 'Sipariş Alındı',
+            'is_approved' => 0,
+            'created_at' => date('Y-m-d H:i:s')
         ]);
 
         $orderId = $db->insertID();
 
         foreach ($cart as $key => $item) {
-            $qty = $item['qty'] ?? 1;
-            $price = $item['price'] ?? 0;
-            $subtotal = $qty * $price;
+            $price = isset($item['price']) ? (float) $item['price'] : 0;
+            $qty = isset($item['qty']) ? (int) $item['qty'] : 1;
+            $subtotal = $price * $qty;
 
             $db->table('order_items')->insert([
                 'order_id' => $orderId,
-                'product_id' => $item['id'] ?? $key,
-                'product_title' => $item['title'] ?? 'Ürün',
+                'product_id' => isset($item['id']) ? $item['id'] : $key,
+                'product_title' => isset($item['title']) ? $item['title'] : 'Ürün',
                 'quantity' => $qty,
                 'price' => $price,
-                'subtotal' => $subtotal
+                'subtotal' => $subtotal,
+                'created_at' => date('Y-m-d H:i:s')
             ]);
         }
 
@@ -75,7 +88,15 @@ class Order extends BaseController
 
     public function myOrders()
     {
-        $userId = session()->get('user_id') ?? session()->get('id') ?? 1;
+        $userId = session()->get('user_id');
+
+        if (!$userId) {
+            $userId = session()->get('id');
+        }
+
+        if (!$userId) {
+            $userId = 1;
+        }
 
         $db = \Config\Database::connect();
 
