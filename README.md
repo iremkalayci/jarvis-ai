@@ -1,61 +1,304 @@
-# CodeIgniter 4 Framework
+@'
+# JARVIS AI – Corporate Website & Backend Web Application Project
 
-## What is CodeIgniter?
+Bu proje, yapay zeka çözümleri sunan kurgusal bir teknoloji şirketi olan **JARVIS AI** için hazırlanmış modern, **Cyberpunk/Neon temalı**, responsive ve kullanıcı dostu bir website + backend web application projesidir.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Proje ilk olarak Web Tasarım dersi için statik bir frontend website olarak hazırlanmıştır. Daha sonra Web Programlama dersi kapsamında **CodeIgniter 4**, **PHP**, **MySQL** ve **XAMPP** kullanılarak backend özellikleri eklenmiş dinamik bir web application haline getirilmiştir.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+---
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Preview / Running the Project
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Proje ilk halinde GitHub Pages üzerinde statik frontend website olarak yayınlanmıştır.
 
-## Important Change with index.php
+Ancak proje **CodeIgniter 4 backend project** yapısına dönüştürüldüğü için artık GitHub Pages üzerinde tam haliyle çalışmaz. Çünkü GitHub Pages, PHP ve MySQL desteklemez.
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+Bu yüzden proje local ortamda **XAMPP** ve **CodeIgniter 4** ile çalıştırılmalıdır.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+### Local Preview
 
-**Please** read the user guide for a better explanation of how CI4 works!
+XAMPP üzerinden Apache ve MySQL başlatıldıktan sonra proje klasöründe terminal açılır ve şu komut çalıştırılır:
 
-## Repository Management
+php spark serve
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Daha sonra tarayıcıdan şu adres açılır:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+http://localhost:8080
 
-## Contributing
+Not: Login, register, cart, checkout, order creation ve database işlemleri yalnızca local server ortamında çalışır.
 
-We welcome contributions from the community.
+---
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+## Project Features
 
-## Server Requirements
+- **Modern UI/UX Design:** Cyberpunk/Neon tarzında, dikkat çekici ve modern bir arayüz tasarlanmıştır.
+- **Responsive Structure:** Bootstrap 5 kullanılarak desktop, tablet ve mobile cihazlara uyumlu responsive yapı oluşturulmuştur.
+- **Advanced Slider Integration (SwiperJS):**
+  - Product ve service sectionlarında mobile ve desktop uyumlu slider yapıları kullanılmıştır.
+- **One-Page Navigation:** Sayfa içi sectionlara smooth scrolling ile geçiş yapılabilmektedir.
+- **Dynamic Components:**
+  - **Chart.js:** Data visualization ve istatistik sectionları için kullanılmıştır.
+  - **Modals:** Sayfa yenilenmeden açılan detail window yapıları oluşturulmuştur.
+  - **Form Formatting:** Checkout inputları için client-side formatlama eklenmiştir.
+- **Admin Panel (Dashboard):**
+  - İlk frontend versiyonunda server-side kodlama olmadan dashboard simulation olarak tasarlanmıştır.
+  - Product addition, announcement management ve file upload formları için arayüzler hazırlanmıştır.
+- **Cyberpunk/Neon Theme:**
+  - Dark mode, neon cyan renkler, glow effectler ve futuristik card tasarımları kullanılmıştır.
+- **Typography:** Teknolojik görünüm için “Orbitron” ve “Rajdhani” fontları kullanılmıştır.
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+---
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+## Backend Features
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+- **CodeIgniter 4 MVC Structure:**
+  - Statik HTML/CSS proje, CodeIgniter 4 MVC yapısına taşınmıştır.
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+- **Database Integration:**
+  - MySQL database bağlantısı XAMPP ve phpMyAdmin üzerinden yapılandırılmıştır.
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- **User Authentication System:**
+  - Kullanıcılar register, login ve logout işlemlerini yapabilmektedir.
+  - User bilgileri database üzerinde saklanmaktadır.
+
+- **Session-Based User Interface:**
+  - Login sonrası kullanıcı adı, cart bilgisi ve balance alanı dinamik olarak gösterilmektedir.
+
+- **Dynamic Product System:**
+  - Product bilgileri yalnızca statik HTML yerine database ve backend yapısıyla yönetilebilir hale getirilmiştir.
+
+- **Dynamic Product Detail Page:**
+  - Her ürün için ayrı ayrı statik sayfa oluşturmak yerine ortak bir product detail page yapısı hazırlanmıştır.
+  - Farklı product ID değerlerine göre farklı product detail içerikleri açılabilmektedir.
+
+- **Shopping Cart System:**
+  - Kullanıcılar productları cart içine ekleyebilir.
+  - Cart içeriğini görüntüleyebilir.
+  - Product quantity artırıp azaltabilir.
+  - Cart içinden product silebilir.
+  - Cart tamamen temizlenebilir.
+  - Total price dinamik olarak hesaplanır.
+
+- **Checkout Page:**
+  - Payment ve order information için checkout formu hazırlanmıştır.
+  - Formda address, country, phone number, credit card number, expiration date ve CVV alanları bulunmaktadır.
+
+- **Formatted Form Inputs:**
+  - Credit card number `0000 0000 0000 0000` formatında düzenlenir.
+  - Expiration date `MM/YY` formatında düzenlenir.
+  - CVV inputu 3 digit ile sınırlandırılır.
+  - Phone number seçilen country code değerine göre formatlanır.
+
+- **Order Infrastructure:**
+  - Basic order creation ve order tracking altyapısı başlatılmıştır.
+  - `orders` ve `order_items` tabloları order management için eklenmiştir.
+
+---
+
+## Technologies and Libraries Used
+
+- **HTML5:** Semantic page structure
+- **CSS3:** Advanced styling, neon effects ve animations
+- **JavaScript:** Slider configurations, modals, form formatting ve interactive components
+- **Bootstrap 5:** Responsive structure ve ready-to-use UI components
+- **Bootstrap Icons:** Icon library
+- **SwiperJS:** Product ve service showcase için advanced slider library
+- **Chart.js:** Data visualization ve charts
+- **Google Fonts:** Orbitron ve Rajdhani fonts
+- **PHP:** Server-side programming language
+- **CodeIgniter 4:** MVC-based PHP framework
+- **MySQL:** Database management system
+- **XAMPP:** Local development environment
+- **phpMyAdmin:** Database management interface
+
+---
+
+## Database Structure
+
+Proje, MySQL üzerinde şu database adıyla çalışmaktadır:
+
+jarvis_db
+
+Projede kullanılan ana tablolar:
+
+<pre>
+users
+products
+orders
+order_items
+</pre>
+
+- **users:** Registered user bilgilerini saklar.
+- **products:** Product name, description, price ve image bilgilerini saklar.
+- **orders:** User ID, total price, address, phone number, approval status ve order date bilgilerini saklar.
+- **order_items:** Her order içindeki product bilgilerini saklar.
+
+---
+
+## Main Routes
+
+<pre>
+/                 Home page
+/kayit            Register page
+/giris            Login page
+/cikis            Logout
+/sepet            Shopping cart
+/odeme            Checkout page
+/siparislerim     User orders page
+/urun/{id}        Dynamic product detail page
+</pre>
+
+---
+
+## Local Installation and Usage
+
+### 1. Clone the Repository
+
+git clone https://github.com/iremkalayci/jarvis-ai.git
+
+### 2. Move Project to XAMPP Directory
+
+Project folder şu dizinin içine taşınmalıdır:
+
+<pre>
+C:\xampp\htdocs\
+</pre>
+
+Örnek:
+
+<pre>
+C:\xampp\htdocs\jarvis
+</pre>
+
+### 3. Start XAMPP
+
+XAMPP Control Panel açılır ve şu servisler başlatılır:
+
+<pre>
+Apache
+MySQL
+</pre>
+
+### 4. Open the Project in VS Code
+
+VS Code üzerinden şu klasör açılır:
+
+<pre>
+C:\xampp\htdocs\jarvis
+</pre>
+
+### 5. Configure Database
+
+phpMyAdmin açılır:
+
+<pre>
+http://localhost/phpmyadmin
+</pre>
+
+Şu isimde bir database oluşturulur:
+
+jarvis_db
+
+Gerekli tablolar import edilir veya manuel olarak oluşturulur.
+
+### 6. Start CodeIgniter Local Server
+
+Project directory içinde şu komut çalıştırılır:
+
+php spark serve
+
+Proje şu adreste çalışır:
+
+<pre>
+http://localhost:8080
+</pre>
+
+---
+
+## Project Structure
+
+<pre>
+jarvis-ai/
+├── app/
+│   ├── Controllers/
+│   │   ├── Home.php
+│   │   ├── Auth.php
+│   │   ├── Cart.php
+│   │   └── Order.php
+│   ├── Models/
+│   ├── Views/
+│   │   ├── index.php
+│   │   ├── cart.php
+│   │   ├── checkout.php
+│   │   ├── my_orders.php
+│   │   └── urun_detay.php
+│   └── Config/
+│       └── Routes.php
+│
+├── public/
+│   ├── assets/
+│   │   ├── css/        # Stylesheets
+│   │   ├── img/        # Project images
+│   │   ├── js/         # JavaScript files
+│   │   └── vendor/     # Bootstrap, Swiper ve diğer libraries
+│   └── index.php
+│
+├── writable/
+├── .env
+├── composer.json
+├── spark
+└── README.md
+</pre>
+
+---
+
+## Development Progress
+
+### Phase 1 – Frontend Website
+
+- HTML, CSS, JavaScript ve Bootstrap kullanılarak statik corporate website oluşturuldu.
+- Cyberpunk/Neon theme özelleştirildi.
+- Product ve service pages tasarlandı.
+- Slider, chart, modal ve dashboard-style pages eklendi.
+- İlk statik frontend versiyonu GitHub Pages üzerinde yayınlandı.
+
+### Phase 2 – Backend Web Application
+
+- Proje CodeIgniter 4 MVC structure içine taşındı.
+- MySQL database bağlantısı yapılandırıldı.
+- User register/login/logout sistemi eklendi.
+- Product detail pages dinamik hale getirildi.
+- Shopping cart system geliştirildi.
+- Cart quantity controls eklendi.
+- Checkout page oluşturuldu.
+- Phone ve credit card input formatting eklendi.
+- Order creation ve order tracking infrastructure başlatıldı.
+
+---
+
+## Developer Information
+
+- **Developer:** İrem Kalaycı
+- **GitHub:** https://github.com/iremkalayci
+
+---
+
+## Resources and License
+
+Bu proje, **BootstrapMade tarafından sunulan GP template** temel alınarak geliştirilmiştir. Template; custom design changes, layout edits, neon/cyberpunk styling, interactive components, dashboard pages ve backend functionality eklenerek önemli ölçüde özelleştirilmiştir.
+
+- **Base Template:** GP by BootstrapMade
+- **Template URL:** https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+- **License:** https://bootstrapmade.com/license/
+
+Projede kullanılan ek libraries ve resources:
+
+- **Bootstrap:** https://getbootstrap.com/
+- **Bootstrap Icons:** https://icons.getbootstrap.com/
+- **SwiperJS:** https://swiperjs.com/
+- **Chart.js:** https://www.chartjs.org/
+- **Google Fonts:** https://fonts.google.com/
+- **CodeIgniter:** https://codeigniter.com/
+
+Bu proje eğitim amacıyla hazırlanmıştır.
+'@ | Set-Content -Path README.md -Encoding UTF8
