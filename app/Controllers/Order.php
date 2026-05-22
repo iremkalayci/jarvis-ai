@@ -19,6 +19,10 @@ class Order extends BaseController
 
     public function create()
     {
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to(base_url('giris'));
+        }
+
         $cart = session()->get('cart') ?? [];
 
         if (empty($cart)) {
@@ -32,15 +36,7 @@ class Order extends BaseController
             return redirect()->to(base_url('odeme'));
         }
 
-        $userId = session()->get('user_id');
-
-        if (!$userId) {
-            $userId = session()->get('id');
-        }
-
-        if (!$userId) {
-            $userId = 1;
-        }
+        $userId = session()->get('id');
 
         $totalPrice = 0;
 
@@ -53,14 +49,47 @@ class Order extends BaseController
 
         $db = \Config\Database::connect();
 
+        $user = $db->table('users')
+            ->where('id', $userId)
+            ->get()
+            ->getRowArray();
+
+        $balance = isset($user['balance']) ? (float) $user['balance'] : 0;
+
+        $usedBalance = 0;
+        $cardPayment = $totalPrice;
+
+        if ($balance > 0) {
+            if ($balance >= $totalPrice) {
+                $usedBalance = $totalPrice;
+                $cardPayment = 0;
+            } else {
+                $usedBalance = $balance;
+                $cardPayment = $totalPrice - $balance;
+            }
+
+            $newBalance = $balance - $usedBalance;
+
+            $db->table('users')
+                ->where('id', $userId)
+                ->update([
+                    'balance' => $newBalance
+                ]);
+
+            session()->set('balance', $newBalance);
+        }
+
         $db->table('orders')->insert([
-            'user_id' => $userId,
-            'total_price' => $totalPrice,
-            'address' => $address,
-            'phone' => $phone,
-            'status' => 'Sipariş Alındı',
-            'is_approved' => 0,
-            'created_at' => date('Y-m-d H:i:s')
+            'user_id'       => $userId,
+            'total_price'   => $totalPrice,
+            'address'       => $address,
+            'phone'         => $phone,
+            'status'        => 'Sipariş Alındı',
+            'is_approved'   => 0,
+            'order_step'    => 0,
+            'is_cancelled'  => 0,
+            'is_delivered'  => 0,
+            'created_at'    => date('Y-m-d H:i:s')
         ]);
 
         $orderId = $db->insertID();
@@ -71,13 +100,13 @@ class Order extends BaseController
             $subtotal = $price * $qty;
 
             $db->table('order_items')->insert([
-                'order_id' => $orderId,
-                'product_id' => isset($item['id']) ? $item['id'] : $key,
+                'order_id'      => $orderId,
+                'product_id'    => isset($item['id']) ? $item['id'] : $key,
                 'product_title' => isset($item['title']) ? $item['title'] : 'Ürün',
-                'quantity' => $qty,
-                'price' => $price,
-                'subtotal' => $subtotal,
-                'created_at' => date('Y-m-d H:i:s')
+                'quantity'      => $qty,
+                'price'         => $price,
+                'subtotal'      => $subtotal,
+                'created_at'    => date('Y-m-d H:i:s')
             ]);
         }
 
@@ -88,15 +117,11 @@ class Order extends BaseController
 
     public function myOrders()
     {
-        $userId = session()->get('user_id');
-
-        if (!$userId) {
-            $userId = session()->get('id');
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to(base_url('giris'));
         }
 
-        if (!$userId) {
-            $userId = 1;
-        }
+        $userId = session()->get('id');
 
         $db = \Config\Database::connect();
 
@@ -110,76 +135,80 @@ class Order extends BaseController
             'orders' => $orders
         ]);
     }
+
     public function cancel($id)
-{
-    if (!session()->get('isLoggedIn')) {
-        return redirect()->to(base_url('giris'));
-    }
+    {
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to(base_url('giris'));
+        }
 
-    $db = \Config\Database::connect();
-    $userId = session()->get('id');
+        $db = \Config\Database::connect();
+        $userId = session()->get('id');
 
-    $order = $db->table('orders')
-        ->where('id', $id)
-        ->where('user_id', $userId)
-        ->get()
-        ->getRowArray();
+        $order = $db->table('orders')
+            ->where('id', $id)
+            ->where('user_id', $userId)
+            ->get()
+            ->getRowArray();
 
-    if (!$order) {
+        if (!$order) {
+            return redirect()->to(base_url('siparislerim'));
+        }
+
+        if ((int)$order['is_approved'] === 1 || (int)$order['is_cancelled'] === 1) {
+            return redirect()->to(base_url('siparislerim'));
+        }
+
+        $refundAmount = (float)$order['total_price'];
+
+        $db->table('orders')
+            ->where('id', $id)
+            ->update([
+                'status'       => 'Sipariş iptal edildi',
+                'is_cancelled' => 1
+            ]);
+
+        $db->table('users')
+            ->where('id', $userId)
+            ->set('balance', 'balance + ' . $refundAmount, false)
+            ->update();
+
+        $newBalance = (float)(session()->get('balance') ?? 0) + $refundAmount;
+        session()->set('balance', $newBalance);
+
         return redirect()->to(base_url('siparislerim'));
     }
 
-    if ($order['is_approved'] == 1 || $order['is_cancelled'] == 1) {
+    public function delivered($id)
+    {
+        if (!session()->get('isLoggedIn')) {
+            return redirect()->to(base_url('giris'));
+        }
+
+        $db = \Config\Database::connect();
+        $userId = session()->get('id');
+
+        $order = $db->table('orders')
+            ->where('id', $id)
+            ->where('user_id', $userId)
+            ->get()
+            ->getRowArray();
+
+        if (!$order) {
+            return redirect()->to(base_url('siparislerim'));
+        }
+
+        if ((int)$order['order_step'] < 5 || (int)$order['is_cancelled'] === 1) {
+            return redirect()->to(base_url('siparislerim'));
+        }
+
+        $db->table('orders')
+            ->where('id', $id)
+            ->update([
+                'status'       => 'Sipariş teslim alındı',
+                'is_delivered' => 1
+            ]);
+
         return redirect()->to(base_url('siparislerim'));
     }
-
-    $db->table('orders')
-        ->where('id', $id)
-        ->update([
-            'status' => 'Sipariş iptal edildi',
-            'is_cancelled' => 1
-        ]);
-
-    $db->table('users')
-        ->where('id', $userId)
-        ->set('balance', 'balance + ' . (float)$order['total_price'], false)
-        ->update();
-
-    session()->set('balance', session()->get('balance') + (float)$order['total_price']);
-
-    return redirect()->to(base_url('siparislerim'));
-}
-
-public function delivered($id)
-{
-    if (!session()->get('isLoggedIn')) {
-        return redirect()->to(base_url('giris'));
-    }
-
-    $db = \Config\Database::connect();
-    $userId = session()->get('id');
-
-    $order = $db->table('orders')
-        ->where('id', $id)
-        ->where('user_id', $userId)
-        ->get()
-        ->getRowArray();
-
-    if (!$order) {
-        return redirect()->to(base_url('siparislerim'));
-    }
-
-    if ((int)$order['order_step'] < 5) {
-        return redirect()->to(base_url('siparislerim'));
-    }
-
-    $db->table('orders')
-        ->where('id', $id)
-        ->update([
-            'status' => 'Sipariş teslim alındı',
-            'is_delivered' => 1
-        ]);
-
-    return redirect()->to(base_url('siparislerim'));
-}
 }

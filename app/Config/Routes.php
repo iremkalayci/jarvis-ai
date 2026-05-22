@@ -64,3 +64,7 @@ $routes->get('admin/kullanici-sil/(:num)', 'Admin::deleteUser/$1');
 $routes->get('admin/siparis-ileri/(:num)', 'Admin::nextStep/$1');
 $routes->get('hesap-aktif-et', 'Auth::reactivatePage');
 $routes->post('hesap-aktif-et', 'Auth::reactivateAccount');
+
+$routes->get('siparis-iptal/(:num)', 'Order::cancel/$1');
+$routes->get('teslim-aldim/(:num)', 'Order::delivered/$1');
+$routes->get('admin/siparis-ileri/(:num)', 'Admin::nextStep/$1');

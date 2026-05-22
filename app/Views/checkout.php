@@ -65,6 +65,66 @@
             color: rgba(255, 255, 255, 0.35) !important;
         }
 
+        .payment-summary {
+            border: 1px solid rgba(0,243,255,0.35);
+            background: rgba(0,243,255,0.04);
+            border-radius: 18px;
+            padding: 22px;
+            margin-bottom: 28px;
+        }
+
+        .payment-summary h3 {
+            color: #00f3ff;
+            font-size: 22px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0,243,255,0.15);
+            padding: 12px 0;
+            color: #ddd;
+        }
+
+        .summary-row:last-child {
+            border-bottom: none;
+        }
+
+        .summary-row strong {
+            color: #fff;
+        }
+
+        .balance-used strong {
+            color: #00f3ff;
+        }
+
+        .card-payment {
+            margin-top: 10px;
+            padding-top: 16px;
+        }
+
+        .card-payment span,
+        .card-payment strong {
+            color: #00f3ff;
+            font-size: 18px;
+        }
+
+        .alert-balance {
+            color: #00f3ff;
+            border: 1px solid rgba(0,243,255,0.4);
+            background: rgba(0,243,255,0.06);
+            border-radius: 14px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .card-fields.hidden {
+            display: none;
+        }
+
         .btn-neon {
             background: rgba(0,243,255,0.15);
             color: #00f3ff;
@@ -107,10 +167,64 @@
 
 <body>
 
+<?php
+    $cartTotal = 0;
+
+    foreach ($cart as $item) {
+        $price = isset($item['price']) ? (float)$item['price'] : 0;
+        $qty = isset($item['qty']) ? (int)$item['qty'] : 1;
+        $cartTotal += $price * $qty;
+    }
+
+    $balance = (float)(session()->get('balance') ?? 0);
+
+    $usedBalance = 0;
+    $cardPayment = $cartTotal;
+
+    if ($balance > 0) {
+        if ($balance >= $cartTotal) {
+            $usedBalance = $cartTotal;
+            $cardPayment = 0;
+        } else {
+            $usedBalance = $balance;
+            $cardPayment = $cartTotal - $balance;
+        }
+    }
+?>
+
 <div class="box">
     <h1>Ödeme ve Sipariş Bilgileri</h1>
 
     <form action="<?= base_url('siparis-olustur') ?>" method="post">
+        <div class="payment-summary">
+            <h3>Ödeme Özeti</h3>
+
+            <div class="summary-row">
+                <span>Sepet Toplamı</span>
+                <strong><?= number_format($cartTotal, 2, ',', '.') ?> TL</strong>
+            </div>
+
+            <div class="summary-row">
+                <span>Hesap Bakiyeniz</span>
+                <strong><?= number_format($balance, 2, ',', '.') ?> TL</strong>
+            </div>
+
+            <div class="summary-row balance-used">
+                <span>Kullanılacak Bakiye</span>
+                <strong>- <?= number_format($usedBalance, 2, ',', '.') ?> TL</strong>
+            </div>
+
+            <div class="summary-row card-payment">
+                <span>Karttan Çekilecek Tutar</span>
+                <strong><?= number_format($cardPayment, 2, ',', '.') ?> TL</strong>
+            </div>
+        </div>
+
+        <?php if ($cardPayment <= 0): ?>
+            <div class="alert-balance">
+                Bu sipariş tamamen hesap bakiyenizden karşılanacaktır. Kart bilgisi girmenize gerek yoktur.
+            </div>
+        <?php endif; ?>
 
         <label>Adres</label>
         <textarea name="address" class="form-control" rows="4" required></textarea>
@@ -128,24 +242,6 @@
             <option value="+32" data-length="9" data-placeholder="470 12 34 56">Belçika (+32)</option>
             <option value="+43" data-length="10" data-placeholder="660 1234567">Avusturya (+43)</option>
             <option value="+41" data-length="9" data-placeholder="76 123 45 67">İsviçre (+41)</option>
-            <option value="+7" data-length="10" data-placeholder="912 345 67 89">Rusya (+7)</option>
-            <option value="+380" data-length="9" data-placeholder="67 123 45 67">Ukrayna (+380)</option>
-            <option value="+994" data-length="9" data-placeholder="50 123 45 67">Azerbaycan (+994)</option>
-            <option value="+995" data-length="9" data-placeholder="555 12 34 56">Gürcistan (+995)</option>
-            <option value="+30" data-length="10" data-placeholder="691 234 5678">Yunanistan (+30)</option>
-            <option value="+359" data-length="9" data-placeholder="88 123 4567">Bulgaristan (+359)</option>
-            <option value="+40" data-length="9" data-placeholder="712 345 678">Romanya (+40)</option>
-            <option value="+966" data-length="9" data-placeholder="50 123 4567">Suudi Arabistan (+966)</option>
-            <option value="+971" data-length="9" data-placeholder="50 123 4567">Birleşik Arap Emirlikleri (+971)</option>
-            <option value="+20" data-length="10" data-placeholder="100 123 4567">Mısır (+20)</option>
-            <option value="+212" data-length="9" data-placeholder="600 123456">Fas (+212)</option>
-            <option value="+91" data-length="10" data-placeholder="98765 43210">Hindistan (+91)</option>
-            <option value="+86" data-length="11" data-placeholder="138 0013 8000">Çin (+86)</option>
-            <option value="+81" data-length="10" data-placeholder="90 1234 5678">Japonya (+81)</option>
-            <option value="+82" data-length="10" data-placeholder="10 1234 5678">Güney Kore (+82)</option>
-            <option value="+61" data-length="9" data-placeholder="412 345 678">Avustralya (+61)</option>
-            <option value="+55" data-length="11" data-placeholder="11 91234 5678">Brezilya (+55)</option>
-            <option value="+52" data-length="10" data-placeholder="55 1234 5678">Meksika (+52)</option>
         </select>
 
         <label>Telefon</label>
@@ -162,41 +258,43 @@
 
         <input type="hidden" name="phone" id="phoneFull">
 
-        <label>Kart Numarası</label>
-        <input
-            type="text"
-            id="cardNumber"
-            class="form-control"
-            placeholder="0000 0000 0000 0000"
-            maxlength="19"
-            inputmode="numeric"
-            autocomplete="cc-number"
-            required
-        >
+        <div class="card-fields <?= $cardPayment <= 0 ? 'hidden' : '' ?>">
+            <label>Kart Numarası</label>
+            <input
+                type="text"
+                id="cardNumber"
+                class="form-control"
+                placeholder="0000 0000 0000 0000"
+                maxlength="19"
+                inputmode="numeric"
+                autocomplete="cc-number"
+                <?= $cardPayment > 0 ? 'required' : '' ?>
+            >
 
-        <label>Son Kullanma Tarihi</label>
-        <input
-            type="text"
-            id="expiryDate"
-            class="form-control"
-            placeholder="AA/YY"
-            maxlength="5"
-            inputmode="numeric"
-            autocomplete="cc-exp"
-            required
-        >
+            <label>Son Kullanma Tarihi</label>
+            <input
+                type="text"
+                id="expiryDate"
+                class="form-control"
+                placeholder="AA/YY"
+                maxlength="5"
+                inputmode="numeric"
+                autocomplete="cc-exp"
+                <?= $cardPayment > 0 ? 'required' : '' ?>
+            >
 
-        <label>CVV</label>
-        <input
-            type="text"
-            id="cvv"
-            class="form-control"
-            placeholder="123"
-            maxlength="3"
-            inputmode="numeric"
-            autocomplete="cc-csc"
-            required
-        >
+            <label>CVV</label>
+            <input
+                type="text"
+                id="cvv"
+                class="form-control"
+                placeholder="123"
+                maxlength="3"
+                inputmode="numeric"
+                autocomplete="cc-csc"
+                <?= $cardPayment > 0 ? 'required' : '' ?>
+            >
+        </div>
 
         <button type="submit" class="btn-neon">
             Siparişi Onayla
@@ -220,21 +318,10 @@
     function formatTurkeyPhone(digits) {
         let formatted = '';
 
-        if (digits.length > 0) {
-            formatted = digits.substring(0, 3);
-        }
-
-        if (digits.length > 3) {
-            formatted += ' ' + digits.substring(3, 6);
-        }
-
-        if (digits.length > 6) {
-            formatted += ' ' + digits.substring(6, 8);
-        }
-
-        if (digits.length > 8) {
-            formatted += ' ' + digits.substring(8, 10);
-        }
+        if (digits.length > 0) formatted = digits.substring(0, 3);
+        if (digits.length > 3) formatted += ' ' + digits.substring(3, 6);
+        if (digits.length > 6) formatted += ' ' + digits.substring(6, 8);
+        if (digits.length > 8) formatted += ' ' + digits.substring(8, 10);
 
         return formatted;
     }
@@ -263,13 +350,7 @@
 
         digits = digits.substring(0, maxLength);
 
-        let formatted = '';
-
-        if (code === '+90') {
-            formatted = formatTurkeyPhone(digits);
-        } else {
-            formatted = formatGenericPhone(digits);
-        }
+        let formatted = code === '+90' ? formatTurkeyPhone(digits) : formatGenericPhone(digits);
 
         phoneInput.value = formatted;
         phoneFull.value = formatted ? code + ' ' + formatted : '';
@@ -281,26 +362,32 @@
         updatePhonePlaceholder();
     });
 
-    cardNumber.addEventListener('input', function () {
-        let value = this.value.replace(/\D/g, '');
-        value = value.substring(0, 16);
-        this.value = value.replace(/(.{4})/g, '$1 ').trim();
-    });
+    if (cardNumber) {
+        cardNumber.addEventListener('input', function () {
+            let value = this.value.replace(/\D/g, '');
+            value = value.substring(0, 16);
+            this.value = value.replace(/(.{4})/g, '$1 ').trim();
+        });
+    }
 
-    expiryDate.addEventListener('input', function () {
-        let value = this.value.replace(/\D/g, '');
-        value = value.substring(0, 4);
+    if (expiryDate) {
+        expiryDate.addEventListener('input', function () {
+            let value = this.value.replace(/\D/g, '');
+            value = value.substring(0, 4);
 
-        if (value.length >= 3) {
-            value = value.substring(0, 2) + '/' + value.substring(2);
-        }
+            if (value.length >= 3) {
+                value = value.substring(0, 2) + '/' + value.substring(2);
+            }
 
-        this.value = value;
-    });
+            this.value = value;
+        });
+    }
 
-    cvv.addEventListener('input', function () {
-        this.value = this.value.replace(/\D/g, '').substring(0, 3);
-    });
+    if (cvv) {
+        cvv.addEventListener('input', function () {
+            this.value = this.value.replace(/\D/g, '').substring(0, 3);
+        });
+    }
 
     document.querySelector('form').addEventListener('submit', function () {
         formatPhoneNumber();
