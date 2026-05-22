@@ -29,4 +29,19 @@ class Home extends BaseController {
         // Ürünü bulduysa tek ortak şablonumuz olan urun_detay'a gönder
         return view('urun_detay', $data);
     }
+    public function urunler()
+{
+    $db = \Config\Database::connect();
+
+  $products = $db->table('products')
+    ->where('is_active', 1)
+    ->where('stock >', 0)
+    ->orderBy('id', 'ASC')
+    ->get()
+    ->getResultArray();
+
+    return view('products', [
+        'products' => $products
+    ]);
+} 
 }

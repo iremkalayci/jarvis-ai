@@ -24,6 +24,113 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
+    .products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.product-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,243,255,0.35);
+    border-radius: 18px;
+    padding: 26px 20px;
+    text-align: center;
+    transition: 0.3s;
+    min-height: 310px;
+}
+
+.product-card:hover {
+    transform: translateY(-7px);
+    border-color: #00f3ff;
+    box-shadow: 0 0 25px rgba(0,243,255,0.22);
+}
+
+.product-card .icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 22px;
+    border: 1px solid #00f3ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00f3ff;
+    font-size: 28px;
+    box-shadow: 0 0 18px rgba(0,243,255,0.25);
+}
+
+.product-card h3 {
+    color: #fff;
+    font-family: "Orbitron", sans-serif;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.product-card p {
+    color: #aaa;
+    font-size: 14px;
+    min-height: 45px;
+}
+
+.product-price {
+    color: #00f3ff !important;
+    font-weight: bold;
+    font-size: 17px !important;
+    margin-bottom: 18px;
+}
+
+.product-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.product-buttons a {
+    flex: 1;
+    font-size: 12px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: "Orbitron", sans-serif;
+}
+
+.btn-detail {
+    border: 1px solid #00f3ff;
+    color: #00f3ff;
+}
+
+.btn-cart {
+    border: 1px solid #00ff64;
+    color: #00ff64;
+}
+
+.btn-detail:hover {
+    background: #00f3ff;
+    color: #000;
+}
+
+.btn-cart:hover {
+    background: #00ff64;
+    color: #000;
+}
+
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
     .header .logo h1 {
         white-space: nowrap !important;
         display: flex;
@@ -326,17 +433,18 @@
             </ul>
           </li>
           
-          <li class="dropdown">
-            <a href="<?= base_url('/') ?>#urunler">
-              <span>ÜRÜNLERİMİZ</span>
-              <i class="bi bi-chevron-down toggle-dropdown"></i>
-            </a>
-            <ul>
-              <li><a href="<?= base_url('urun/1') ?>">Jarvis NLP Pro</a></li>
-              <li><a href="<?= base_url('urun/2') ?>">Vision X</a></li>
-              <li><a href="<?= base_url('urun/3') ?>">DataCore</a></li>
-            </ul>
-          </li>
+        <li class="dropdown">
+  <a href="<?= base_url('urunler') ?>">
+    <span>ÜRÜNLERİMİZ</span>
+    <i class="bi bi-chevron-down toggle-dropdown"></i>
+  </a>
+  <ul>
+    <li><a href="<?= base_url('urunler') ?>">Tüm Ürünler</a></li>
+    <li><a href="<?= base_url('urun/1') ?>">Jarvis NLP Pro</a></li>
+    <li><a href="<?= base_url('urun/2') ?>">Vision X</a></li>
+    <li><a href="<?= base_url('urun/3') ?>">DataCore</a></li>
+  </ul>
+</li>
           
           <li class="dropdown">
             <a href="<?= base_url('/') ?>#units">
@@ -638,44 +746,7 @@
       </div>
     </section>
   
-    <section id="urunler" class="services section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Ürünlerimiz</h2>
-        <p>Paket Yazılımlarımız</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-
-            <?php foreach ($products as $product): ?>
-            <div class="swiper-slide">
-              <div class="service-item">
-                <div class="icon"><i class="bi bi-cpu"></i></div>
-                <h3><?= esc($product['title']) ?></h3>
-                <p><?= esc($product['description']) ?></p>
-                
-                <p style="color: #00f3ff; font-weight: bold; font-size:18px;">
-                  <?= number_format($product['price'], 2, ',', '.') ?> TL
-                </p>
-                
-                <div class="product-buttons">
-                  <a href="<?= base_url('urun/' . $product['id']) ?>" class="btn-product btn-detail">
-                    <i class="bi bi-info-circle"></i> Detayları İncele
-                  </a>
-                  <a href="<?= base_url('sepete-ekle/' . $product['id']) ?>" class="btn-product btn-cart">
-                    <i class="bi bi-cart-plus"></i> Sepete Ekle
-                  </a>
-                </div>
-              </div>
-            </div>
-            <?php endforeach; ?>
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
+   
 
     <section id="units" class="services section">
       <div class="container section-title" data-aos="fade-up">

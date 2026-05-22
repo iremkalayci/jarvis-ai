@@ -1,0 +1,375 @@
+ERROR - 2026-05-22 03:29:26 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'jarvis_db', 3306, '', 0)
+#1 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\jarvis\system\Model.php(192): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\jarvis\system\BaseModel.php(615): CodeIgniter\Model->doFind(true, '1')
+#6 C:\xampp\htdocs\jarvis\app\Controllers\Home.php(22): CodeIgniter\BaseModel->find('1')
+#7 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->urunDetay('1')
+#8 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\jarvis\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\jarvis\system\Model.php(192): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\jarvis\system\BaseModel.php(615): CodeIgniter\Model->doFind(true, '1')
+#5 C:\xampp\htdocs\jarvis\app\Controllers\Home.php(22): CodeIgniter\BaseModel->find('1')
+#6 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->urunDetay('1')
+#7 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\jarvis\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-05-22 03:29:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: urun/1]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`
+WHERE `products`.`id` = :products.id:', [...], false)
+ 3 SYSTEMPATH\Model.php(192): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(615): CodeIgniter\Model->doFind(true, '1')
+ 5 APPPATH\Controllers\Home.php(22): CodeIgniter\BaseModel->find('1')
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->urunDetay('1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+ERROR - 2026-05-22 03:29:34 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'jarvis_db', 3306, '', 0)
+#1 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\jarvis\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\jarvis\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-05-22 03:29:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+ERROR - 2026-05-22 03:30:09 --> Error connecting to the database: mysqli_sql_exception: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'jarvis_db', 3306, '', 0)
+#1 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\xampp\htdocs\jarvis\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No connection could be made because the target machine actively refused it in C:\xampp\htdocs\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp\htdocs\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\xampp\htdocs\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\xampp\htdocs\jarvis\system\rewrite.php(44): require_once('C:\\xampp\\htdocs...')
+#13 {main}
+CRITICAL - 2026-05-22 03:30:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 03:48:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin_dashboard.php"
+[Method: GET, Route: admin]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin_dashboard.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admin_dashboard', [], true)
+ 3 APPPATH\Controllers\Admin.php(22): view('admin_dashboard')
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 03:49:27 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin_dashboard.php"
+[Method: GET, Route: admin]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin_dashboard.php')
+ 2 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('admin_dashboard', [], true)
+ 3 APPPATH\Controllers\Admin.php(22): view('admin_dashboard')
+ 4 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->index()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+ERROR - 2026-05-22 16:54:04 --> Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 16:54:04 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'is_active' in 'field list'
+[Method: POST, Route: admin/urun-guncelle/24]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 16:54:04 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 16:54:04 --> [Caused by] mysqli_sql_exception: Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+ERROR - 2026-05-22 16:54:08 --> Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 16:54:08 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'is_active' in 'field list'
+[Method: POST, Route: admin/urun-guncelle/24]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 16:54:08 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 16:54:08 --> [Caused by] mysqli_sql_exception: Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+ERROR - 2026-05-22 16:56:17 --> Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 16:56:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'is_active' in 'field list'
+[Method: POST, Route: admin/urun-guncelle/24]
+in SYSTEMPATH\Database\BaseConnection.php on line 865.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 2 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 4 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 16:56:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 310.
+ 1 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 4 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
+CRITICAL - 2026-05-22 16:56:18 --> [Caused by] mysqli_sql_exception: Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 300.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(300): mysqli->query('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(910): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(827): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `products` SET `title` = \'HealthVision AI\', `description` = \'Medikal görüntü analizi ve sağlık verisi destek sistemi.\', `price` = \'15000.00\', `stock` = \'10\', `is_active` = 1, `image` = \'\'
+WHERE `id` = \'24\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `products` SET `title` = :title:, `description` = :description:, `price` = :price:, `stock` = :stock:, `is_active` = :is_active:, `image` = :image:
+WHERE `id` = :id:', [...], false)
+ 5 APPPATH\Controllers\Admin.php(195): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Admin->updateProduct('24')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\xampp\\htdocs\\jarvis\\public\\index.php')
