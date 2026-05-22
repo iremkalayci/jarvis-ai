@@ -201,11 +201,18 @@ $stepLabels = [
 
                                     <span style="color:#00f3ff;">Teslim alındı</span>
 
-                                <?php else: ?>
+                              <?php else: ?>
 
-                                    <span style="color:#888;">Takipte</span>
+    <span style="color:#888;">Takipte</span>
 
-                                <?php endif; ?>
+<?php endif; ?>
+
+<br><br>
+
+<a href="<?= base_url('fatura/' . $order['id']) ?>" 
+   class="btn-neon">
+    <i class="bi bi-receipt"></i> Fatura Gör
+</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

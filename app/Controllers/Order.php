@@ -211,4 +211,32 @@ class Order extends BaseController
 
         return redirect()->to(base_url('siparislerim'));
     }
+    public function invoice($id)
+{
+    if (!session()->get('isLoggedIn')) {
+        return redirect()->to(base_url('giris'));
+    }
+
+    $db = \Config\Database::connect();
+
+    $order = $db->table('orders')
+        ->where('id', $id)
+        ->where('user_id', session()->get('id'))
+        ->get()
+        ->getRowArray();
+
+    if (!$order) {
+        return redirect()->to(base_url('siparislerim'));
+    }
+
+    $items = $db->table('order_items')
+        ->where('order_id', $id)
+        ->get()
+        ->getResultArray();
+
+    return view('invoice', [
+        'order' => $order,
+        'items' => $items
+    ]);
+}
 }

@@ -69,6 +69,10 @@
     <i class="bi bi-box"></i>
     Ürünleri Yönet
 </a>
+<a href="<?= base_url('admin/kullanicilar') ?>" class="admin-card">
+    <i class="bi bi-people"></i>
+    Kullanıcıları Yönet
+</a>
 
     <a href="<?= base_url() ?>" class="admin-card">
         <i class="bi bi-house"></i>

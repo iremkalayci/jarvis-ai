@@ -7,7 +7,16 @@
     <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="<?= base_url('assets/vendor/bootstrap-icons/bootstrap-icons.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
-
+<div style="text-align:center; margin-bottom:25px;">
+    <?php if(session()->get('profile_photo')): ?>
+        <img src="<?= base_url('uploads/users/' . session()->get('profile_photo')) ?>" 
+             style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:2px solid #00f3ff;">
+    <?php else: ?>
+        <div style="width:120px; height:120px; border-radius:50%; border:2px solid #00f3ff; display:flex; align-items:center; justify-content:center; margin:auto; color:#00f3ff; font-size:45px;">
+            <i class="bi bi-person"></i>
+        </div>
+    <?php endif; ?>
+</div>
     <style>
         body {
             background: #050505;
@@ -166,7 +175,7 @@
     <div class="account-card">
         <h2>Bilgilerimi Güncelle</h2>
 
-        <form action="<?= base_url('hesabim-guncelle') ?>" method="post">
+     <form action="<?= base_url('hesabim-guncelle') ?>" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label>Ad Soyad</label>
                 <input type="text" name="name" class="form-control" value="<?= esc(session()->get('name') ?? '') ?>" required>
@@ -181,6 +190,8 @@
                 <label>Adres</label>
                 <textarea name="address" class="form-control" placeholder="Adresinizi girin..."><?= esc(session()->get('address') ?? '') ?></textarea>
             </div>
+            <label>Profil Fotoğrafı</label>
+<input type="file" name="profile_photo" class="form-control mb-3" accept="image/*">
 
             <button type="submit" class="btn-neon w-100">
                 Bilgilerimi Güncelle

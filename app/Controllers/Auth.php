@@ -67,6 +67,7 @@ class Auth extends BaseController
             'role'       => $user['role'],
             'balance'    => $user['balance'],
             'address'    => $user['address'] ?? '',
+            'profile_photo' => $user['profile_photo'] ?? null,
             'isLoggedIn' => true
         ];
 
@@ -88,34 +89,43 @@ class Auth extends BaseController
         return view('account');
     }
 
-    public function updateAccount()
-    {
-        if (!session()->get('isLoggedIn')) {
-            return redirect()->to(base_url('giris'));
-        }
-
-        $db = \Config\Database::connect();
-        $userId = session()->get('id');
-
-        $data = [
-            'name'    => $this->request->getPost('name'),
-            'email'   => $this->request->getPost('email'),
-            'address' => $this->request->getPost('address')
-        ];
-
-        $db->table('users')
-            ->where('id', $userId)
-            ->update($data);
-
-        session()->set([
-            'name'    => $data['name'],
-            'email'   => $data['email'],
-            'address' => $data['address']
-        ]);
-
-        return redirect()->to(base_url('hesabim'));
+ public function updateAccount()
+{
+    if (!session()->get('isLoggedIn')) {
+        return redirect()->to(base_url('giris'));
     }
 
+    $db = \Config\Database::connect();
+    $userId = session()->get('id');
+
+    $data = [
+        'name'    => $this->request->getPost('name'),
+        'email'   => $this->request->getPost('email'),
+        'address' => $this->request->getPost('address')
+    ];
+
+    $photo = $this->request->getFile('profile_photo');
+
+    if ($photo && $photo->isValid() && !$photo->hasMoved()) {
+        $newName = $photo->getRandomName();
+        $photo->move(FCPATH . 'uploads/users', $newName);
+
+        $data['profile_photo'] = $newName;
+        session()->set('profile_photo', $newName);
+    }
+
+    $db->table('users')
+        ->where('id', $userId)
+        ->update($data);
+
+    session()->set([
+        'name'    => $data['name'],
+        'email'   => $data['email'],
+        'address' => $data['address']
+    ]);
+
+    return redirect()->to(base_url('hesabim'));
+}
     public function updatePassword()
     {
         if (!session()->get('isLoggedIn')) {

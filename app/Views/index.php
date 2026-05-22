@@ -24,6 +24,14 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <style>
+    .navbar-profile-photo {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #00f3ff;
+    box-shadow: 0 0 8px rgba(0,243,255,0.45);
+}
     .products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -485,8 +493,17 @@
 
             <div class="user-menu-wrapper">
                 <div class="user-menu-toggle" onclick="toggleUserMenu(event)">
-                    <i class="bi bi-person-circle"></i>
-                    <span><?= esc($userName) ?></span>
+                   <?php if(session()->get('profile_photo')): ?>
+    <img 
+        src="<?= base_url('uploads/users/' . session()->get('profile_photo')) ?>" 
+        class="navbar-profile-photo"
+        alt="Profil Fotoğrafı"
+    >
+<?php else: ?>
+    <i class="bi bi-person-circle"></i>
+<?php endif; ?>
+
+<span><?= esc($userName) ?></span>
                     <i class="bi bi-chevron-down"></i>
                 </div>
 

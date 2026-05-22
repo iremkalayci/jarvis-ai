@@ -244,4 +244,107 @@ public function toggleProduct($id)
 
     return redirect()->to(base_url('admin/urunler'));
 }
+public function users()
+{
+    if ($redirect = $this->checkAdmin()) {
+        return $redirect;
+    }
+
+    $db = \Config\Database::connect();
+
+    $users = $db->table('users')
+        ->orderBy('id', 'DESC')
+        ->get()
+        ->getResultArray();
+
+    return view('admin_users', [
+        'users' => $users
+    ]);
+}
+
+public function freezeUser($id)
+{
+    if ($redirect = $this->checkAdmin()) {
+        return $redirect;
+    }
+
+    if ((int)$id === (int)session()->get('id')) {
+        return redirect()->to(base_url('admin/kullanicilar'));
+    }
+
+    $db = \Config\Database::connect();
+
+    $db->table('users')
+        ->where('id', $id)
+        ->update([
+            'is_frozen' => 1
+        ]);
+
+    return redirect()->to(base_url('admin/kullanicilar'));
+}
+
+public function activateUser($id)
+{
+    if ($redirect = $this->checkAdmin()) {
+        return $redirect;
+    }
+
+    $db = \Config\Database::connect();
+
+    $db->table('users')
+        ->where('id', $id)
+        ->update([
+            'is_frozen' => 0
+        ]);
+
+    return redirect()->to(base_url('admin/kullanicilar'));
+}
+
+public function deleteUser($id)
+{
+    if ($redirect = $this->checkAdmin()) {
+        return $redirect;
+    }
+
+    if ((int)$id === (int)session()->get('id')) {
+        return redirect()->to(base_url('admin/kullanicilar'));
+    }
+
+    $db = \Config\Database::connect();
+
+    $db->table('users')
+        ->where('id', $id)
+        ->delete();
+
+    return redirect()->to(base_url('admin/kullanicilar'));
+}
+public function createUser()
+{
+    if ($redirect = $this->checkAdmin()) {
+        return $redirect;
+    }
+
+    return view('admin_user_form');
+}
+
+public function storeUser()
+{
+    if ($redirect = $this->checkAdmin()) {
+        return $redirect;
+    }
+
+    $db = \Config\Database::connect();
+
+    $db->table('users')->insert([
+        'name'      => $this->request->getPost('name'),
+        'email'     => $this->request->getPost('email'),
+        'password'  => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+        'role'      => $this->request->getPost('role'),
+        'balance'   => $this->request->getPost('balance') ?? 0,
+        'address'   => $this->request->getPost('address'),
+        'is_frozen' => $this->request->getPost('is_frozen') ? 1 : 0
+    ]);
+
+    return redirect()->to(base_url('admin/kullanicilar'));
+}
 }
