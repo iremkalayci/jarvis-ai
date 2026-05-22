@@ -152,18 +152,25 @@ public function storeProduct()
 
     $db = \Config\Database::connect();
 
+    $imageName = null;
+    $image = $this->request->getFile('image');
+
+    if ($image && $image->isValid() && !$image->hasMoved()) {
+        $imageName = $image->getRandomName();
+        $image->move(FCPATH . 'uploads/products', $imageName);
+    }
+
     $db->table('products')->insert([
         'title' => $this->request->getPost('title'),
         'description' => $this->request->getPost('description'),
         'price' => $this->request->getPost('price'),
         'stock' => $this->request->getPost('stock'),
         'is_active' => $this->request->getPost('is_active') ? 1 : 0,
-        'image' => $this->request->getPost('image')
+        'image' => $imageName
     ]);
 
     return redirect()->to(base_url('admin/urunler'));
 }
-
 public function editProduct($id)
 {
     if ($redirect = $this->checkAdmin()) {
@@ -190,6 +197,39 @@ public function updateProduct($id)
 
     $db = \Config\Database::connect();
 
+    $product = $db->table('products')
+        ->where('id', $id)
+        ->get()
+        ->getRowArray();
+
+    $imageName = $product['image'] ?? null;
+    if ($this->request->getPost('delete_image') == 1) {
+    if (!empty($imageName)) {
+        $oldPath = FCPATH . 'uploads/products/' . $imageName;
+
+        if (file_exists($oldPath)) {
+            unlink($oldPath);
+        }
+    }
+
+    $imageName = null;
+}
+
+    $image = $this->request->getFile('image');
+
+    if ($image && $image->isValid() && !$image->hasMoved()) {
+        if (!empty($imageName)) {
+            $oldPath = FCPATH . 'uploads/products/' . $imageName;
+
+            if (file_exists($oldPath)) {
+                unlink($oldPath);
+            }
+        }
+
+        $imageName = $image->getRandomName();
+        $image->move(FCPATH . 'uploads/products', $imageName);
+    }
+
     $db->table('products')
         ->where('id', $id)
         ->update([
@@ -198,7 +238,7 @@ public function updateProduct($id)
             'price' => $this->request->getPost('price'),
             'stock' => $this->request->getPost('stock'),
             'is_active' => $this->request->getPost('is_active') ? 1 : 0,
-            'image' => $this->request->getPost('image')
+            'image' => $imageName
         ]);
 
     return redirect()->to(base_url('admin/urunler'));
@@ -211,6 +251,19 @@ public function deleteProduct($id)
     }
 
     $db = \Config\Database::connect();
+
+    $product = $db->table('products')
+        ->where('id', $id)
+        ->get()
+        ->getRowArray();
+
+    if ($product && !empty($product['image'])) {
+        $imagePath = FCPATH . 'uploads/products/' . $product['image'];
+
+        if (file_exists($imagePath)) {
+            unlink($imagePath);
+        }
+    }
 
     $db->table('products')
         ->where('id', $id)

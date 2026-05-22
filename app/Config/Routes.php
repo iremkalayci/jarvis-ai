@@ -75,3 +75,4 @@ $routes->get('admin/kullanici-sil/(:num)', 'Admin::deleteUser/$1');
 $routes->get('admin/kullanici-ekle', 'Admin::createUser');
 $routes->post('admin/kullanici-kaydet', 'Admin::storeUser');
 $routes->get('fatura/(:num)', 'Order::invoice/$1');
+$routes->get('ai-haberler', 'News::index');

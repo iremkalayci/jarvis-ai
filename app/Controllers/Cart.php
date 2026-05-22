@@ -13,52 +13,38 @@ class Cart extends BaseController
         ]);
     }
 
-    public function add($id)
-    {
-        /*
-         * Şimdilik ürünleri burada sabit tuttuk.
-         * Çünkü sepet çalışsın, proje patlamasın.
-         * İstersen sonra bunu ProductModel + database'e bağlarız.
-         */
-        $products = [
-            1 => [
-                'id'    => 1,
-                'title' => 'Jarvis NLP Pro',
-                'price' => 5000
-            ],
-            2 => [
-                'id'    => 2,
-                'title' => 'Vision X',
-                'price' => 7500
-            ],
-            3 => [
-                'id'    => 3,
-                'title' => 'DataCore',
-                'price' => 12000
-            ],
-        ];
+   public function add($id)
+{
+    $db = \Config\Database::connect();
 
-        if (!isset($products[$id])) {
-            return redirect()->to(base_url('/'));
-        }
+    $product = $db->table('products')
+        ->where('id', $id)
+        ->where('is_active', 1)
+        ->where('stock >', 0)
+        ->get()
+        ->getRowArray();
 
-        $cart = session()->get('cart') ?? [];
-
-        if (isset($cart[$id])) {
-            $cart[$id]['qty']++;
-        } else {
-            $cart[$id] = [
-                'id'    => $products[$id]['id'],
-                'title' => $products[$id]['title'],
-                'price' => $products[$id]['price'],
-                'qty'   => 1
-            ];
-        }
-
-        session()->set('cart', $cart);
-
-        return redirect()->to(base_url('sepet'));
+    if (!$product) {
+        return redirect()->to(base_url('urunler'));
     }
+
+    $cart = session()->get('cart') ?? [];
+
+    if (isset($cart[$id])) {
+        $cart[$id]['qty'] += 1;
+    } else {
+        $cart[$id] = [
+            'id'    => $product['id'],
+            'title' => $product['title'],
+            'price' => $product['price'],
+            'qty'   => 1
+        ];
+    }
+
+    session()->set('cart', $cart);
+
+    return redirect()->to(base_url('sepet'));
+}
 
     public function remove($id)
     {

@@ -423,23 +423,17 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="<?= base_url('/') ?>#hero" class="active">ANA SAYFA</a></li>
+          <li>
+    <a href="<?= base_url('ai-haberler') ?>">
+        AI HABERLERİ
+        
+    </a>
+</li>
           <li><a href="<?= base_url('/') ?>#about">HAKKIMIZDA</a></li>
           <li><a href="<?= base_url('/') ?>#mission">MİSYON-VİZYON</a></li>
+          
 
-          <li class="dropdown">
-            <a href="<?= base_url('/') ?>#services">
-              <span>HİZMETLER</span>
-              <i class="bi bi-chevron-down toggle-dropdown"></i>
-            </a>
-            <ul>
-              <li><a href="<?= base_url('/') ?>#services">NLP Çözümleri</a></li>
-              <li><a href="<?= base_url('/') ?>#services">Görüntü İşleme</a></li>
-              <li><a href="<?= base_url('/') ?>#services">Veri Analitiği</a></li>
-              <li><a href="<?= base_url('/') ?>#services">Siber Güvenlik</a></li>
-              <li><a href="<?= base_url('/') ?>#services">Akıllı Asistanlar</a></li>
-              <li><a href="<?= base_url('/') ?>#services">Robotik Süreç</a></li>
-            </ul>
-          </li>
+         
           
         <li class="dropdown">
   <a href="<?= base_url('urunler') ?>">
@@ -693,75 +687,7 @@
       </div>
     </section>
 
-    <section id="services" class="services section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Hizmetlerimiz</h2>
-        <p>Yapay Zeka Çözümleri</p>
-      </div>
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper mySwiper">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-chat-text"></i></div>
-                <h3>NLP Çözümleri</h3>
-                <p>Metinleri analiz eden akıllı sistemler.</p>
-                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-eye"></i></div>
-                <h3>Görüntü İşleme</h3>
-                <p>Güvenlik ve analiz için görsel zeka.</p>
-                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-graph-up-arrow"></i></div>
-                <h3>Veri Analitiği</h3>
-                <p>Geleceği tahmin eden algoritmalar.</p>
-                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-shield-check"></i></div>
-                <h3>Siber Güvenlik</h3>
-                <p>Yapay zeka destekli tehdit önleme.</p>
-                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-robot"></i></div>
-                <h3>Akıllı Asistanlar</h3>
-                <p>7/24 çalışan sanal müşteri temsilcileri.</p>
-                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="service-item position-relative">
-                <div class="icon"><i class="bi bi-cpu"></i></div>
-                <h3>Robotik Süreç</h3>
-                <p>Ofis işlerinizi otomatize edin.</p>
-                <a href="<?= base_url('/') ?>#services" class="readmore stretched-link">Detaylar <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
+    
   
    
 

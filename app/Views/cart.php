@@ -349,7 +349,7 @@
             </div>
 
             <div class="cart-actions">
-                <a href="<?= base_url('/') ?>#urunler" class="btn-neon btn-ghost">
+                <a href="<?= base_url('urunler') ?>#urunler" class="btn-neon btn-ghost">
                     <i class="bi bi-arrow-left"></i> Alışverişe Devam Et
                 </a>
 

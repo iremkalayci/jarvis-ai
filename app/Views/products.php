@@ -11,6 +11,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        .product-disabled {
+    position: relative;
+    opacity: 0.72;
+    border-color: rgba(255, 77, 109, 0.22) !important;
+}
+
+
+.stock-badge {
+    display: inline-block;
+    margin-top: 8px;
+    color: #ff4d6d;
+    border: 1px solid rgba(255,77,109,0.55);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+}
+
+.btn-disabled {
+    background: rgba(255,77,109,0.08);
+    color: #ff6b88 !important;
+    border: 1px solid rgba(255,77,109,0.35) !important;
+}
+
+.btn-disabled:hover {
+    background: transparent !important;
+    color: #ff4d6d !important;
+    box-shadow: none !important;
+}
+        .product-img {
+    width: 100%;
+    height: 135px;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    border: 1px solid rgba(0,243,255,0.22);
+    background: rgba(255,255,255,0.03);
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
         body {
             background: #050505;
             color: #fff;
@@ -391,21 +435,30 @@
         }
     ?>
 
-    <div class="product-card" data-title="<?= strtolower(esc($product['title'])) ?>">
-        <div>
-            <div class="product-top">
-                <div class="product-icon">
-                    <i class="bi <?= $icon ?>"></i>
-                </div>
+   <?php 
+    $isAvailable = (($product['is_active'] ?? 1) == 1) && (($product['stock'] ?? 0) > 0);
+?>
 
-                <div class="product-title-area">
-                    <h3><?= esc($product['title']) ?></h3>
-                  
-                </div>
+<div class="product-card <?= !$isAvailable ? 'product-disabled' : '' ?>" data-title="<?= strtolower(esc($product['title'])) ?>">
+    <div>
+       
+        <div class="product-top">
+            <div class="product-icon">
+                <i class="bi <?= $icon ?>"></i>
             </div>
 
-            <p><?= esc($product['description']) ?></p>
+            <div class="product-title-area">
+                <h3><?= esc($product['title']) ?></h3>
+                <?php if (!$isAvailable): ?>
+    <span class="stock-badge">
+        Stokta Yok
+    </span>
+<?php endif; ?>
+            </div>
         </div>
+
+        <p><?= esc($product['description']) ?></p>
+    </div>
 
         <div class="product-bottom">
             <p class="product-price">
@@ -416,10 +469,15 @@
                <a href="<?= base_url('urun/' . $product['id']) ?>" class="btn-detail">
     Detay
 </a>
-
-<a href="<?= base_url('sepete-ekle/' . $product['id']) ?>" class="btn-cart">
-    Sepete Ekle
-</a>
+<?php if ($isAvailable): ?>
+    <a href="<?= base_url('sepete-ekle/' . $product['id']) ?>" class="btn-cart">
+        Sepete Ekle
+    </a>
+<?php else: ?>
+    <span class="btn-cart btn-disabled">
+        Stokta Yok
+    </span>
+<?php endif; ?>
             </div>
         </div>
     </div>

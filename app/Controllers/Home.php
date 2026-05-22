@@ -34,8 +34,6 @@ class Home extends BaseController {
     $db = \Config\Database::connect();
 
   $products = $db->table('products')
-    ->where('is_active', 1)
-    ->where('stock >', 0)
     ->orderBy('id', 'ASC')
     ->get()
     ->getResultArray();

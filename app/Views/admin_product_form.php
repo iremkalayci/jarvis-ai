@@ -17,6 +17,7 @@
     <form 
         action="<?= $product ? base_url('admin/urun-guncelle/' . $product['id']) : base_url('admin/urun-kaydet') ?>" 
         method="post"
+        enctype="multipart/form-data"
         class="mt-4"
     >
         <label>Ürün Adı</label>
@@ -55,13 +56,36 @@
             required
         >
 
-        <label>Görsel Dosya Adı</label>
+        <?php if (!empty($product['image'])): ?>
+            <div class="mb-3 text-center">
+                <p style="color:#00f3ff;">Mevcut Görsel</p>
+                <img 
+                    src="<?= base_url('uploads/products/' . $product['image']) ?>" 
+                    style="max-width:220px; height:130px; object-fit:cover; border:1px solid #00f3ff; border-radius:12px;"
+                    alt="<?= esc($product['title']) ?>"
+                >
+            </div>
+
+            <div class="form-check mb-3 text-center">
+                <input 
+                    class="form-check-input" 
+                    type="checkbox" 
+                    name="delete_image" 
+                    value="1" 
+                    id="delete_image"
+                >
+                <label class="form-check-label" for="delete_image">
+                    Mevcut görseli sil
+                </label>
+            </div>
+        <?php endif; ?>
+
+        <label>Ürün Görseli</label>
         <input 
-            type="text" 
+            type="file" 
             name="image" 
             class="form-control mb-3" 
-            placeholder="ornek: nlp.png"
-            value="<?= esc($product['image'] ?? '') ?>"
+            accept="image/*"
         >
 
         <div class="form-check mb-4">
