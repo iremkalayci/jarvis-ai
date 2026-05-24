@@ -163,6 +163,8 @@ public function storeProduct()
     $db->table('products')->insert([
         'title' => $this->request->getPost('title'),
         'description' => $this->request->getPost('description'),
+       'short_description' => $this->request->getPost('description'),
+        'long_description' => $this->request->getPost('long_description'),
         'price' => $this->request->getPost('price'),
         'stock' => $this->request->getPost('stock'),
         'is_active' => $this->request->getPost('is_active') ? 1 : 0,
@@ -235,8 +237,10 @@ public function updateProduct($id)
         ->update([
             'title' => $this->request->getPost('title'),
             'description' => $this->request->getPost('description'),
+            'short_description' => $this->request->getPost('description'),
+           'long_description' => $this->request->getPost('long_description'),
             'price' => $this->request->getPost('price'),
-            'stock' => $this->request->getPost('stock'),
+            'stock' => $this->request->getPost('stock'),    
             'is_active' => $this->request->getPost('is_active') ? 1 : 0,
             'image' => $imageName
         ]);

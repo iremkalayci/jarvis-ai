@@ -36,6 +36,12 @@
             rows="4" 
             required
         ><?= esc($product['description'] ?? '') ?></textarea>
+        <label>Detay Açıklaması</label>
+<textarea
+    name="long_description"
+    class="form-control mb-3"
+    rows="6"
+><?= esc($product['long_description'] ?? '') ?></textarea>
 
         <label>Fiyat</label>
         <input 

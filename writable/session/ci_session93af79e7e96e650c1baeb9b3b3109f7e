@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1779641675;_ci_previous_url|s:45:"http://localhost:8080/index.php/admin/urunler";id|s:1:"4";name|s:13:"İREM KALAYCI";email|s:24:"iremnkalayci@outlook.com";role|s:5:"admin";balance|s:7:"7500.00";address|s:0:"";profile_photo|N;isLoggedIn|b:1;cart|a:1:{i:24;a:4:{s:2:"id";s:2:"24";s:5:"title";s:15:"HealthVision AI";s:5:"price";s:8:"15000.00";s:3:"qty";i:1;}}

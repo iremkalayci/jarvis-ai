@@ -6,6 +6,20 @@
     <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        .product-long-description {
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 620px;
+    margin-top: 26px;
+    white-space: normal;
+}
+
+.product-long-description br {
+    display: block;
+    margin-bottom: 12px;
+    content: "";
+}
         .product-detail-img {
     width: 100%;
     max-width: 560px;
@@ -16,7 +30,33 @@
     box-shadow: 0 0 25px rgba(0,243,255,0.18);
     display: block;
 }
+.btn-buy{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width:220px;
+    height:58px;
+    padding:0 32px;
 
+    border-radius:14px;
+    border:1px solid #00f3ff;
+
+    background: linear-gradient(135deg,#00eaff,#00c8ff);
+    color:#041014;
+
+    font-size:20px;
+    font-weight:700;
+    text-decoration:none;
+    letter-spacing:.5px;
+
+    box-shadow: 0 0 18px rgba(0,243,255,.22);
+    transition:.25s ease;
+}
+.btn-buy:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 0 28px rgba(0,243,255,.35);
+    color:#041014;
+}
 .product-detail-placeholder {
     width: 100%;
     max-width: 560px;
@@ -62,7 +102,9 @@
             <div class="col-lg-6">
                 <h1 class="product-title"><?= esc($product['title']) ?></h1>
                 <div class="product-price"><?= number_format($product['price'], 2, ',', '.') ?> TL</div>
-                <p class="product-desc"><?= esc($product['description']) ?></p>
+               <div class="product-long-description">
+    <?= nl2br(esc($product['long_description'] ?: $product['short_description'])) ?>
+</div>
                 
                 <div class="mt-4">
                    <?php
