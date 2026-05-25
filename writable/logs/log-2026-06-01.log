@@ -1,0 +1,1356 @@
+ERROR - 2026-06-01 00:20:57 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 00:20:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 00:21:01 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 00:21:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 00:21:07 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 00:21:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 00:21:25 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 00:21:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 00:46:18 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 00:46:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 00:46:18 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 00:46:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:21:51 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:21:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:22:00 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:22:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:22:05 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:22:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:27:18 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:27:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:27:24 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:27:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:27:26 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:27:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:27:34 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:27:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:27:35 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:27:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:28:24 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mysqli::real_co...', 'C:\\Users\\irem\\D...', 201)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#15 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('sql108.infinity...', 'if0_42027084', Object(SensitiveParameterValue), 'if0_42027084_ja...', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known.  in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:28:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for sql108.infinityfree.com failed: No such host is known. 
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:37:56 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'jarvis_db', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:37:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:37:58 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'jarvis_db', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:37:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:38:14 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'jarvis_db', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:38:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:38:24 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'jarvis_db', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:38:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:38:48 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'jarvis_db', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:38:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
+ERROR - 2026-06-01 01:38:49 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'jarvis_db', 3306, '', 0)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\MySQLi\Connection.php:231
+Stack trace:
+#0 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\app\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(951): App\Controllers\Home->index()
+#7 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 C:\Users\irem\Desktop\231307047_irem_kalayci\jarvis\system\rewrite.php(44): require_once('C:\\Users\\irem\\D...')
+#13 {main}
+CRITICAL - 2026-06-01 01:38:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+[Method: GET, Route: /]
+in SYSTEMPATH\Database\BaseConnection.php on line 606.
+ 1 SYSTEMPATH\Database\BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `products`', [], false)
+ 3 SYSTEMPATH\Model.php(253): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(10): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\irem\\Desktop\\231307047_irem_kalayci\\jarvis\\public\\index.php')
