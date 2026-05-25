@@ -8,28 +8,16 @@ Proje ilk olarak Web Tasarım dersi için statik bir frontend website olarak haz
 
 ## Preview / Running the Project
 
-Proje ilk halinde GitHub Pages üzerinde statik frontend website olarak yayınlanmıştır.
 
-Ancak proje **CodeIgniter 4 backend project** yapısına dönüştürüldüğü için artık GitHub Pages üzerinde tam haliyle çalışmaz. Çünkü GitHub Pages, PHP ve MySQL desteklemez.
 
-Bu yüzden proje local ortamda **XAMPP** ve **CodeIgniter 4** ile çalıştırılmalıdır.
+Projeye aşağıdaki bağlantı üzerinden erişilebilir:
 
-### Local Preview
-
-XAMPP üzerinden Apache ve MySQL başlatıldıktan sonra proje klasöründe terminal açılır ve şu komut çalıştırılır:
-
-php spark serve
-
-Daha sonra tarayıcıdan şu adres açılır:
-
-http://localhost:8080
-
-Not: Login, register, cart, checkout, order creation ve database işlemleri yalnızca local server ortamında çalışır.
+https://jarvisai.xo.je
 
 ---
 
 ## Project Features
-
+g
 - **Modern UI/UX Design:** Cyberpunk/Neon tarzında, dikkat çekici ve modern bir arayüz tasarlanmıştır.
 - **Responsive Structure:** Bootstrap 5 kullanılarak desktop, tablet ve mobile cihazlara uyumlu responsive yapı oluşturulmuştur.
 - **Advanced Slider Integration (SwiperJS):**
